@@ -16,6 +16,11 @@ class CreateFuncionariosTable extends Migration
         Schema::create('funcionarios', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->string('cpf_cnpj')->unique();
+            $table->bigInteger('tel_celular')->unique();
+            $table->string('nome');
         });
     }
 

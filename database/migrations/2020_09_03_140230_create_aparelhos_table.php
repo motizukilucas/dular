@@ -16,6 +16,10 @@ class CreateAparelhosTable extends Migration
         Schema::create('aparelhos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('numero_serie')->unique();
+            $table->string('marca');
+            $table->string('modelo');
+            $table->string('tipo');
         });
     }
 

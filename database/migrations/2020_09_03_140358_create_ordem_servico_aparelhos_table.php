@@ -16,6 +16,14 @@ class CreateOrdemServicoAparelhosTable extends Migration
         Schema::create('ordem_servico_aparelhos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('id_ordem_servico')->constrained('ordem_servicos');
+            $table->foreignId('id_aparelho')->constrained('aparelhos');
+            $table->text('acessorios')->nullable();
+            $table->text('defeito_informado');
+            $table->dateTime('entrada', 6);
+            $table->dateTime('saida', 6)->nullable();
+            $table->dateTime('retorno', 6)->nullable();
+            $table->dateTime('segunda_saida', 6)->nullable();
         });
     }
 

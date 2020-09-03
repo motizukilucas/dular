@@ -16,6 +16,9 @@ class CreateOrdemServicoTecnicosTable extends Migration
         Schema::create('ordem_servico_tecnicos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('id_ordem_servico_aparelho')->constrained('ordem_servico_aparelhos');
+            $table->foreignId('id_tecnico')->constrained('funcionarios');
+            $table->string('defeito_constatado');
         });
     }
 

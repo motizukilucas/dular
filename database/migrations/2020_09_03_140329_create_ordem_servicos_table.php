@@ -16,6 +16,12 @@ class CreateOrdemServicosTable extends Migration
         Schema::create('ordem_servicos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('id_cliente')->constrained('clientes');
+            $table->foreignId('id_atendente')->constrained('funcionarios');
+            $table->double('preco');
+            $table->string('forma_pagamento')->nullable();
+            $table->double('desconto')->nullable();
+            $table->string('status');
         });
     }
 

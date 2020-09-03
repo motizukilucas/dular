@@ -16,6 +16,9 @@ class CreateOrdemServicoPecasTable extends Migration
         Schema::create('ordem_servico_pecas', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('id_ordem_servico_aparelho')->constrained('ordem_servico_aparelhos');
+            $table->string('peca');
+            $table->double('preco');
         });
     }
 
