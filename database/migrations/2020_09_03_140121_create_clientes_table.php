@@ -23,7 +23,7 @@ class CreateClientesTable extends Migration
             $table->bigInteger('tel_residencial')->nullable();
             $table->bigInteger('tel_comercial')->nullable();
             $table->string('rua')->nullable();
-            $table->smallInteger('numero')->nullable();
+            $table->integer('numero')->nullable();
             $table->string('complemento')->nullable();
             $table->string('cidade')->nullable();
             $table->string('estado')->nullable();
