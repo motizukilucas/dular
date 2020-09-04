@@ -1,9 +1,3 @@
-carregaCliente();
-carregaAparelho();
-carregaOrdemServico();
-carregaOrdemServicoPeca();
-carregaOrdemServicoTecnico();
-
 function carregaCliente() 
 {
     $( "#dados-cliente" ).load( "api/cliente-form");
