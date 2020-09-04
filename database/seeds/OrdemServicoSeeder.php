@@ -11,6 +11,6 @@ class OrdemServicoSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(App\OrdemServico::class, 20)->create();
     }
 }

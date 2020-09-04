@@ -11,6 +11,6 @@ class FuncionarioSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(App\Funcionario::class, 20)->create();
     }
 }

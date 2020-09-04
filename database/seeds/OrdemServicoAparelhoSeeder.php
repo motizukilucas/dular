@@ -11,6 +11,6 @@ class OrdemServicoAparelhoSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(App\OrdemServicoAparelho::class, 20)->create();
     }
 }

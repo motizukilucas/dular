@@ -11,6 +11,6 @@ class OrdemServicoPecaSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(App\OrdemServicoPeca::class, 10)->create();
     }
 }

@@ -11,6 +11,6 @@ class AparelhoSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(App\Aparelho::class, 20)->create();
     }
 }
