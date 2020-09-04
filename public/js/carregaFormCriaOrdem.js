@@ -1,29 +1,89 @@
 function carregaCliente() 
 {
-    $( "#dados-cliente" ).load( "api/cliente-form");
+    var result = null;
+    $.ajax({
+       url: "api/cliente-form",
+       type: 'get',
+       dataType: 'html',
+       async: false,
+       success: function(data) {
+           result = data;
+       } 
+    });
+    return result;
 }
 
 function carregaAparelho() 
 {
-    $( "#dados-aparelho" ).load( "api/aparelho-form");
+    var result = null;
+    $.ajax({
+       url: "api/aparelho-form",
+       type: 'get',
+       dataType: 'html',
+       async: false,
+       success: function(data) {
+           result = data;
+       } 
+    });
+    return result;
 }
 
 function carregaOrdemServico() 
 {
-    $( "#dados-ordem-servico" ).load( "api/ordem-servico-form");
+    var result = null;
+    $.ajax({
+       url: "api/ordem-servico-form",
+       type: 'get',
+       dataType: 'html',
+       async: false,
+       success: function(data) {
+           result = data;
+       } 
+    });
+    return result;
 }
 
 function carregaOrdemServicoAparelho() 
 {
-    $( "#dados-ordem-servico-aparelho" ).load( "api/ordem-servico-aparelho-form");
+    var result = null;
+    $.ajax({
+       url: "api/ordem-servico-aparelho-form",
+       type: 'get',
+       dataType: 'html',
+       async: false,
+       success: function(data) {
+           result = data;
+       } 
+    });
+    return result;
 }
 
 function carregaOrdemServicoTecnico() 
 {
-    $( "#dados-ordem-servico-tecnico" ).load( "api/ordem-servico-tecnico-form");
+    var result = null;
+    $.ajax({
+       url: "api/ordem-servico-tecnico-form",
+       type: 'get',
+       dataType: 'html',
+       async: false,
+       success: function(data) {
+           result = data;
+       } 
+    });
+    return result;
 }
 
 function carregaOrdemServicoPeca() 
 {
-    $( "#dados-ordem-servico-peca" ).load( "api/ordem-servico-peca-form");
+    var result = null;
+    $.ajax({
+       url: "api/ordem-servico-peca-form",
+       type: 'get',
+       dataType: 'html',
+       async: false,
+       success: function(data) {
+           result = data;
+       } 
+    });
+    return result;
 }
