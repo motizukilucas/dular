@@ -31,9 +31,25 @@
                 Ordem de serviço <span class="badge badge-secondary">NOVA</span>
             </h2>
 
-            <form method="POST" action="/api/nova-ordem" class="needs-validation" novalidate>
+            <form id="cria-form" method="POST" action="/api/nova-ordem" class="needs-validation" novalidate>
                 @csrf
+                <div id="dados-cliente"></div>
+                <hr>
+                <div id="dados-aparelho"></div>
+                <div id="dados-ordem-servico-aparelho"></div>
+                <div id="dados-ordem-servico-peca"></div>
+                <div id="dados-ordem-servico-tecnico"></div>
+                <hr>
+                <div id="dados-ordem-servico"></div>
             </form>
         </div>
+        <script>
+        $( "#dados-cliente" ).load( "api/cliente-form");
+        $( "#dados-aparelho" ).load( "api/aparelho-form");
+        $( "#dados-ordem-servico" ).load( "api/ordem-servico-form");
+        $( "#dados-ordem-servico-aparelho" ).load( "api/ordem-servico-aparelho-form");
+        $( "#dados-ordem-servico-tecnico" ).load( "api/ordem-servico-tecnico-form");
+        $( "#dados-ordem-servico-peca" ).load( "api/ordem-servico-peca-form");
+        </script>
     </body>
 </html>
