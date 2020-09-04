@@ -37,19 +37,12 @@
                 <hr>
                 <div id="dados-aparelho"></div>
                 <div id="dados-ordem-servico-aparelho"></div>
-                <div id="dados-ordem-servico-peca"></div>
                 <div id="dados-ordem-servico-tecnico"></div>
+                <div id="dados-ordem-servico-peca"></div>
                 <hr>
                 <div id="dados-ordem-servico"></div>
             </form>
         </div>
-        <script>
-        $( "#dados-cliente" ).load( "api/cliente-form");
-        $( "#dados-aparelho" ).load( "api/aparelho-form");
-        $( "#dados-ordem-servico" ).load( "api/ordem-servico-form");
-        $( "#dados-ordem-servico-aparelho" ).load( "api/ordem-servico-aparelho-form");
-        $( "#dados-ordem-servico-tecnico" ).load( "api/ordem-servico-tecnico-form");
-        $( "#dados-ordem-servico-peca" ).load( "api/ordem-servico-peca-form");
-        </script>
+        <script type="text/javascript" src="js/carregaFormCriacaoOrdemServico.js"></script>
     </body>
 </html>
