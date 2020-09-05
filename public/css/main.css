@@ -3,3 +3,51 @@
     height: 50px;
     cursor: pointer;
 }
+
+.navbar, h1 {
+    margin-top: 24px;
+}
+
+.action {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.btn-wrapper {
+    width: 120px;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 5%;
+    font-weight: 400;
+    margin-left: 24px;
+    color: white;
+}
+
+.btn-action {
+    height: 25px;
+}
+
+.btn-wpp {
+    background-color: #25D366;
+    border: 1px solid #25D366;
+}
+
+.btn-wpp img {
+    margin-left: 6px;
+}
+
+.btn-print, .btn-mail {
+    background-color: #6c757d;
+    border: 1px solid #6c757d;
+}
+
+.btn-mail img {
+    margin-left :18px;
+}
+
+.btn-print img {
+    margin-left: 12px;
+}
