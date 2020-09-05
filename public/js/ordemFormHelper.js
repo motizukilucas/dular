@@ -10,7 +10,7 @@ function geraForm()
     form += '<img  id="btn-plus-equipamento" class="btn-plus m-auto" src="img/plus-circle-solid.svg">';
     form += '<hr>';
     form += carregaOrdemServico();
-    $("#cria-form").after(form);
+    $(".btn-primary").before(form);
 }
 
 function adicionaEquipamento()
