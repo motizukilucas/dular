@@ -56,7 +56,6 @@
             </div>
         </div>
         <script type="text/javascript" src="js/carregaOrdemForm.js"></script>
-        <script type="text/javascript" src="js/ordemFormHelper.js"></script>
         <script  type="text/javascript" src="js/criaOrdem.js"></script>
     </body>
 </html>
