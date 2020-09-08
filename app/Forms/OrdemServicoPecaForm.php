@@ -10,7 +10,7 @@ class OrdemServicoPecaForm
                     <div class="col-md-6 mb-3">
                         <label>Peça trocada</label>
                         <div class="input-group">
-                            <input name="peca2" type="text" class="form-control">    
+                            <input name="peca" type="text" class="form-control">    
                         </div>
                     </div>
 
@@ -20,7 +20,7 @@ class OrdemServicoPecaForm
                             <div class="input-group-prepend">
                                 <div class="input-group-text">R$</div>
                             </div>
-                            <input name="peca_preco2" type="text" class="form-control">    
+                            <input name="peca_preco" type="text" class="form-control">    
                         </div>
                         <div class="invalid-feedback">
                             Forneça um valor válido.
