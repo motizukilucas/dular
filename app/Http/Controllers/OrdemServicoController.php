@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Forms\OrdemServicoForm;
 use App\OrdemServico;
+use App\Interfaces\FuncionarioRepositoryInterface;
 
 class OrdemServicoController extends Controller
 {
@@ -23,9 +24,9 @@ class OrdemServicoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(FuncionarioRepositoryInterface $funcionario_repo)
     {
-       return OrdemServicoForm::create();
+       return OrdemServicoForm::create($funcionario_repo->getFuncionarios());
     }
 
     /**
