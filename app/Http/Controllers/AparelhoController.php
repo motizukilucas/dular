@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Forms\AparelhoForm;
+use App\Aparelho;
 
 class AparelhoController extends Controller
 {
@@ -35,7 +36,8 @@ class AparelhoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $aparelho = Aparelho::create($request->all());
+        return $aparelho;
     }
 
     /**
