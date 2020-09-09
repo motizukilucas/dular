@@ -23,10 +23,11 @@ class OrdemServicoForm
                         <div class="col-md-4 mb-3">
                             <label>Forma de pagamento</label>
                             <select name="forma_pagamento" class="custom-select">
-                                <option selected disabled value="">Escolha...</option>
-                                <option>Dinheiro</option>
-                                <option>Cartão</option>
-                                <option>...</option>
+                                <option selected disabled>Escolha...</option>
+                                <option value="DINHEIRO">Dinheiro</option>
+                                <option value="CARTAO">Cartão</option>
+                                <option value="BOLETO">Boleto</option>
+                                <option value="TRANSFERENCIA">Transferência</option>
                             </select>
                             <div class="invalid-feedback">
                                 Selecione um forma de pagamento válido.
