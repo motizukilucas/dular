@@ -28,6 +28,7 @@ Route::get('ordem-servico-peca-form', 'OrdemServicoPecaController@create');
 
 // Resource routes
 Route::resource('cliente', 'ClienteController');
+Route::resource('funcionario', 'FuncionarioController');
 Route::resource('aparelho', 'AparelhoController');
 Route::resource('ordem-servico', 'OrdemServicoController');
 Route::resource('ordem-servico-aparelho', 'OrdemServicoAparelhoController');
