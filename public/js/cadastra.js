@@ -35,7 +35,7 @@ function cadastraOrdemServico(ordem_servico, id_cliente, id_atendente)
 
     var result = null;
     $.ajax({
-    url: "api/ordem_servico",
+    url: "api/ordem-servico",
     type: 'post',
     data: ordem_servico,
     async: false,
@@ -53,7 +53,7 @@ function cadastraOrdemServicoAparelho(ordem_servico_aparelho, id_ordem_servico, 
 
     var result = null;
     $.ajax({
-    url: "api/ordem_servico_aparelho",
+    url: "api/ordem-servico-aparelho",
     type: 'post',
     data: ordem_servico_aparelho,
     async: false,
@@ -70,7 +70,7 @@ function cadastraOrdemServicoPeca(ordem_servico_peca, id_ordem_servico_aparelho)
 
     var result = null;
     $.ajax({
-    url: "api/ordem_servico_peca",
+    url: "api/ordem-servico-peca",
     type: 'post',
     data: ordem_servico_peca,
     async: false,
@@ -81,14 +81,14 @@ function cadastraOrdemServicoPeca(ordem_servico_peca, id_ordem_servico_aparelho)
     return result;
 }
 
-function cadastraOrdemServicoTecnico(ordem_servico_tecnico, id_ordem_servico, id_tecnico)
+function cadastraOrdemServicoTecnico(ordem_servico_tecnico, id_ordem_servico_aparelho, id_tecnico)
 {
-    ordem_servico_tecnico.id_ordem_servico = id_ordem_servico;
+    ordem_servico_tecnico.id_ordem_servico_aparelho = id_ordem_servico_aparelho;
     ordem_servico_tecnico.id_tecnico = id_tecnico;
 
     var result = null;
     $.ajax({
-    url: "api/ordem_servico_tecnico",
+    url: "api/ordem-servico-tecnico",
     type: 'post',
     data: ordem_servico_tecnico,
     async: false,
