@@ -4,13 +4,21 @@ namespace App\Forms;
 
 class OrdemServicoTecnicoForm
 {
-    public static function create()
+    public static function create($funcionarios)
     {
-        return '<div class="form-row">
-                    <div class="col-md-6 mb-3">
-                        <label>Técnico responsável</label>
-                        <input name="tecnico" type="text" class="form-control" required>
-                        <div class="invalid-feedback">
+        $form = '<div class="form-row">
+        <div class="col-md-6 mb-3">
+            <label>Técnico responsável</label>
+            <select name="tecnico" class="custom-select" required>
+                <option selected disabled>Escolha...</option>';
+
+        foreach($funcionarios as $funcionario)
+        {
+            $form .= '<option value='.  $funcionario->id .'>'. $funcionario->nome .'</option>';
+        }
+
+        $form .= '</select>
+                    <div class="invalid-feedback">
                             Forneça um técnico responsável válido.
                         </div>
                     </div>
@@ -23,5 +31,7 @@ class OrdemServicoTecnicoForm
                         </div>
                     </div>
                 </div>';
+                
+        return $form;
     }
 }
