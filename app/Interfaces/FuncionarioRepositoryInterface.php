@@ -6,5 +6,5 @@ use Illuminate\Http\Request;
 
 interface FuncionarioRepositoryInterface
 {
-    public function getFuncionarios();
+    public static function getFuncionarios();
 }
