@@ -19,6 +19,7 @@ function coletaDadosCliente()
 function coletaDadosAparelho()
 {
     var aparelho = new Object();
+    aparelho.tipo = ($("[name='tipo']").val());
     aparelho.equipamento = ($("[name='equipamento']").val());
     aparelho.marca = ($("[name='marca']").val());
     aparelho.modelo = ($("[name='modelo']").val());
