@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Forms\OrdemServicoTecnicoForm;
+use App\OrdemServicoTecnico;
 
 class OrdemServicoTecnicoController extends Controller
 {
@@ -35,7 +36,8 @@ class OrdemServicoTecnicoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ordem_servico_tecnico = OrdemServicoTecnico::create($request->all());
+        return $ordem_servico_tecnico;
     }
 
     /**

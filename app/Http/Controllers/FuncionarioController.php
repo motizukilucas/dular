@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Funcionario;
 
 class FuncionarioController extends Controller
 {
@@ -34,7 +35,8 @@ class FuncionarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $funcionario = Funcionario::create($request->all());
+        return $funcionario;
     }
 
     /**
