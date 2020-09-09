@@ -6,7 +6,7 @@ class OrdemServicoForm
 {
     public static function create($funcionarios)
     {
-        $resultado = '<div class="form-row">
+        $form = '<div class="form-row">
                         <div class="col-md-4 mb-3">
                             <label>Valor</label>
                             <div class="input-group">
@@ -55,10 +55,10 @@ class OrdemServicoForm
 
             foreach($funcionarios as $funcionario)
             {
-                $resultado .= '<option value='.  $funcionario->id .'>'. $funcionario->nome .'</option>';
+                $form .= '<option value='.  $funcionario->id .'>'. $funcionario->nome .'</option>';
             }
              
-            $resultado .=    '</select>
+            $form .=    '</select>
                             <div class="invalid-feedback">
                                 Forneça um atendente válido.
                             </div>
@@ -78,6 +78,6 @@ class OrdemServicoForm
                         </div>
         </div>';
 
-        return $resultado;
+        return $form;
     }
 }
