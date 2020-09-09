@@ -33,7 +33,7 @@
                 Ordem de serviço <span class="badge badge-secondary">NOVA</span>
             </h1>
 
-            <form id="cria-form" method="POST" action="/api/nova-ordem" class="needs-validation" novalidate>
+            <form id="cria-form" class="needs-validation" novalidate>
                 @csrf
                 <button class="btn btn-primary" type="submit">Criar ordem</button>
             </form>
@@ -55,7 +55,9 @@
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="js/carregaOrdemForm.js"></script>
+        <script type="text/javascript" src="js/carregaCreateForms.js"></script>
+        <script  type="text/javascript" src="js/coletaDadosForm.js"></script>
+        <script  type="text/javascript" src="js/cadastra.js"></script>
         <script  type="text/javascript" src="js/criaOrdem.js"></script>
     </body>
 </html>
