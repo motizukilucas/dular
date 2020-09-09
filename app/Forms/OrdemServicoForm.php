@@ -68,10 +68,13 @@ class OrdemServicoForm
                         <div class="col-md-6 mb-3">
                             <label>Status</label>
                             <select name="status" class="custom-select" required>
-                                <option selected disabled value="">Escolha...</option>
-                                <option>Autorizado</option>
-                                <option>Pendente</option>
-                                <option>...</option>
+                                <option selected disabled>Escolha...</option>
+                                <option value="AGUARDANDO">Aguardando aprovação</option>
+                                <option value="ENTREGUE">Entregue ao cliente</option>
+                                <option value="DEVOLUCAO">Devolução</option>
+                                <option value="SEM SOLUCAO">Entregue sem solução</option>
+                                <option value="FALTANDO PECAS">Faltando Peças</option>
+                                <option value="NA BANCADA">Na bancada</option>
                             </select>
                             <div class="invalid-feedback">
                                 Selecione um status válido.
