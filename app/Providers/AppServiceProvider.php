@@ -17,6 +17,11 @@ class AppServiceProvider extends ServiceProvider
             'App\Interfaces\FuncionarioRepositoryInterface',
             'App\Repositories\FuncionarioRepository'
         );
+
+        $this->app->bind(
+            'App\Interfaces\AparelhoRepositoryInterface',
+            'App\Repositories\AparelhoRepository'
+        );
     }
 
     /**
