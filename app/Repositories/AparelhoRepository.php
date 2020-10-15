@@ -11,4 +11,10 @@ class AparelhoRepository implements AparelhoRepositoryInterface
     {
         return Aparelho::all();
     }
+
+    public function store(Request $request)
+    {
+        $aparelho = Aparelho::create($request->all());
+        return $aparelho;
+    }
 }
