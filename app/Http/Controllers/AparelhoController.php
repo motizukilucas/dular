@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Forms\AparelhoForm;
-use App\Aparelho;
+use App\Interfaces\AparelhoRepositoryInterface;
 
 class AparelhoController extends Controller
 {
@@ -13,9 +13,9 @@ class AparelhoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(AparelhoRepositoryInterface $aparelho_repo)
     {
-        //
+        return $aparelho_repo->getAparelhos();
     }
 
     /**
@@ -34,9 +34,9 @@ class AparelhoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, AparelhoRepositoryInterface $aparelho_repo)
     {
-        $aparelho = Aparelho::create($request->all());
+        $aparelho = $aparelho_repo::create($request->all());
         return $aparelho;
     }
 

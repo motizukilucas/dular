@@ -4,15 +4,16 @@ namespace App\Repositories;
 
 use App\Aparelho;
 use App\Interfaces\AparelhoRepositoryInterface;
+use Illuminate\Http\Request;
 
 class AparelhoRepository implements AparelhoRepositoryInterface
 {
-    public static function getAparelhos()
+    public function getAparelhos()
     {
         return Aparelho::all();
     }
 
-    public function store(Request $request)
+    public function create(Request $request)
     {
         $aparelho = Aparelho::create($request->all());
         return $aparelho;

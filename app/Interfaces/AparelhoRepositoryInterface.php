@@ -6,5 +6,6 @@ use Illuminate\Http\Request;
 
 interface AparelhoRepositoryInterface
 {
-    public static function getAparelhos();
+    public function getAparelhos();
+    public function create(Request $request);
 }
