@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Forms\OrdemServicoTecnicoForm;
 use App\OrdemServicoTecnico;
-use App\Interfaces\FuncionarioRepositoryInterface;
+use App\Funcionario;
 
 class OrdemServicoTecnicoController extends Controller
 {
@@ -24,9 +24,9 @@ class OrdemServicoTecnicoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(FuncionarioRepositoryInterface $funcionario_repo)
+    public function create()
     {
-        return OrdemServicoTecnicoForm::create($funcionario_repo->getFuncionarios());
+        return OrdemServicoTecnicoForm::create(Funcionario::all());
     }
 
     /**
