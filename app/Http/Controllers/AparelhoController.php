@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Forms\AparelhoForm;
-use App\Interfaces\AparelhoRepositoryInterface;
+use App\Aparelho;
 
 class AparelhoController extends Controller
 {
@@ -13,9 +13,9 @@ class AparelhoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(AparelhoRepositoryInterface $aparelho_repo)
+    public function index()
     {
-        return $aparelho_repo->getAparelhos();
+        return Aparelho::all();
     }
 
     /**
@@ -34,9 +34,9 @@ class AparelhoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, AparelhoRepositoryInterface $aparelho_repo)
+    public function store(Request $request)
     {
-        $aparelho = $aparelho_repo::create($request->all());
+        $aparelho = Aparelho::create($request->all());
         return $aparelho;
     }
 
@@ -48,7 +48,8 @@ class AparelhoController extends Controller
      */
     public function show($id)
     {
-        //
+        $aparelho = Aparelho::findOrFail($id);
+        return $aparelho;
     }
 
     /**
@@ -71,7 +72,9 @@ class AparelhoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $aparelho = Aparelho::findOrFail($id);
+        $aparelho->update($request->all());
+        return $aparelho;
     }
 
     /**
@@ -82,6 +85,6 @@ class AparelhoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Aparelho::destroy($id);
     }
 }
