@@ -15,7 +15,7 @@ class OrdemServicoAparelhoController extends Controller
      */
     public function index()
     {
-        //
+        return OrdemServicoAparelho::all();
     }
 
     /**
@@ -48,7 +48,8 @@ class OrdemServicoAparelhoController extends Controller
      */
     public function show($id)
     {
-        //
+        $ordem_servico_aparelho = OrdemServicoAparelho::findOrFail($id);
+        return $ordem_servico_aparelho;
     }
 
     /**
@@ -71,7 +72,9 @@ class OrdemServicoAparelhoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $ordem_servico_aparelho = OrdemServicoAparelho::findOrFail($id);
+        $ordem_servico_aparelho->update($request->all());
+        return $ordem_servico_aparelho;
     }
 
     /**
@@ -82,6 +85,6 @@ class OrdemServicoAparelhoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        OrdemServicoAparelho::destroy($id);
     }
 }

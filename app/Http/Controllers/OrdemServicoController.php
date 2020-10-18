@@ -16,7 +16,7 @@ class OrdemServicoController extends Controller
      */
     public function index()
     {
-        //
+        return OrdemServico::all();
     }
 
     /**
@@ -49,7 +49,8 @@ class OrdemServicoController extends Controller
      */
     public function show($id)
     {
-        //
+        $ordem_servico = OrdemServico::findOrFail($id);
+        return $ordem_servico;
     }
 
     /**
@@ -72,7 +73,9 @@ class OrdemServicoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $ordem_servico = OrdemServico::findOrFail($id);
+        $ordem_servico->update($request->all());
+        return $ordem_servico;
     }
 
     /**
@@ -83,6 +86,6 @@ class OrdemServicoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        OrdemServico::destroy($id);
     }
 }

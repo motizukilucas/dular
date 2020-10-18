@@ -16,7 +16,7 @@ class OrdemServicoTecnicoController extends Controller
      */
     public function index()
     {
-        //
+        return OrdemServicoTecnico::all();
     }
 
     /**
@@ -49,7 +49,8 @@ class OrdemServicoTecnicoController extends Controller
      */
     public function show($id)
     {
-        //
+        $ordem_servico_tecnico = OrdemServicoTecnico::findOrFail($id);
+        return $ordem_servico_tecnico;
     }
 
     /**
@@ -72,7 +73,9 @@ class OrdemServicoTecnicoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $ordem_servico_tecnico = OrdemServicoTecnico::findOrFail($id);
+        $ordem_servico_tecnico->update($request->all());
+        return $ordem_servico_tecnico;
     }
 
     /**
@@ -83,6 +86,6 @@ class OrdemServicoTecnicoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        OrdemServicoTecnico::destroy($id);
     }
 }

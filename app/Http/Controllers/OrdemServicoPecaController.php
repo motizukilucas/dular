@@ -15,7 +15,7 @@ class OrdemServicoPecaController extends Controller
      */
     public function index()
     {
-        //
+        return OrdemServicoPeca::all();
     }
 
     /**
@@ -48,7 +48,8 @@ class OrdemServicoPecaController extends Controller
      */
     public function show($id)
     {
-        //
+        $ordem_servico_peca = OrdemServicoPeca::findOrFail($id);
+        return $ordem_servico_peca;
     }
 
     /**
@@ -71,7 +72,9 @@ class OrdemServicoPecaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $ordem_servico_peca = OrdemServicoPeca::findOrFail($id);
+        $ordem_servico_peca->update($request->all());
+        return $ordem_servico_peca;
     }
 
     /**
@@ -82,6 +85,6 @@ class OrdemServicoPecaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        OrdemServicoPeca::destroy($id);
     }
 }
