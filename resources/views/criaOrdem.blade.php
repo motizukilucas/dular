@@ -57,7 +57,8 @@
         </div>
         <script type="text/javascript" src="js/carregaCreateForms.js"></script>
         <script type="text/javascript" src="js/coletaDadosForm.js"></script>
+        <script type="text/javascript" src="js/retornaExistente.js"></script>
         <script type="text/javascript" src="js/cadastra.js"></script>
-        <script type="text/javascript" src="js/criaOrdem.js"></script>
+        <script type="text/javascript" src="js/criaOrdem.js"></script>      
     </body>
 </html>
