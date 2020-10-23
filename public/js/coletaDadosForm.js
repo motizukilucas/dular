@@ -30,7 +30,7 @@ function coletaDadosAparelho()
 function coletaDadosOrdemServico()
 {
     var ordem_servico = new Object();
-    ordem_servico.valor = ($("[name='valor']").val());
+    ordem_servico.preco = ($("[name='preco']").val());
     ordem_servico.forma_pagamento = ($("[name='forma_pagamento']").val());
     ordem_servico.desconto = ($("[name='desconto']").val());
     ordem_servico.atendente = ($("[name='atendente']").val());
