@@ -1,6 +1,5 @@
 function retornaCliente(cliente)
 {
-    console.log(cliente);
     var result = null;
     $.ajax({
     url: "api/retorna-cliente",
@@ -16,7 +15,6 @@ function retornaCliente(cliente)
 
 function retornaAparelho(aparelho)
 {
-    console.log(aparelho);
     var result = null;
     $.ajax({
     url: "api/retorna-aparelho",
