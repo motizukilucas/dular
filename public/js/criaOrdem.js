@@ -8,11 +8,19 @@ function cadastra()
         event.preventDefault();
         
         dados_cliente = coletaDadosCliente();
-        cliente = cadastraCliente(dados_cliente);
-    
+        cliente = retornaCliente(dados_cliente);
+        if (cliente == null)
+        {
+            cliente = cadastraCliente(dados_cliente);
+        }
+        
         dados_aparelho = coletaDadosAparelho();
-        aparelho = cadastraAparelho(dados_aparelho);
-    
+        aparelho = retornaAparelho(dados_aparelho);
+        if (aparelho == null)
+        {
+            aparelho = cadastraAparelho(dados_aparelho);
+        }
+        
         dados_ordem_servico = coletaDadosOrdemServico();
         ordem_servico = cadastraOrdemServico(dados_ordem_servico, cliente.id, 1);
 

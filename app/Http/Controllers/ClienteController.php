@@ -88,12 +88,6 @@ class ClienteController extends Controller
         Cliente::destroy($id);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function returnByCel(Request $request)
     {
         $cliente = Cliente::where('tel_celular', $request->tel_celular)->first();

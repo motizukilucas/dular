@@ -35,4 +35,6 @@ Route::resource('ordem-servico-aparelho', 'OrdemServicoAparelhoController');
 Route::resource('ordem-servico-peca', 'OrdemServicoPecaController');
 Route::resource('ordem-servico-tecnico', 'OrdemServicoTecnicoController');
 
+// Retorna routes
 Route::post('retorna-cliente', 'ClienteController@returnByCel');
+Route::post('retorna-aparelho', 'AparelhoController@returnBySerial');

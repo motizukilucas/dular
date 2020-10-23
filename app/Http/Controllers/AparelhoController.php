@@ -87,4 +87,10 @@ class AparelhoController extends Controller
     {
         Aparelho::destroy($id);
     }
+
+    public function returnBySerial(Request $request)
+    {
+        $aparelho = Aparelho::where('numero_serie', $request->numero_serie)->first();
+        return $aparelho;
+    }
 }
