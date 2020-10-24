@@ -90,7 +90,7 @@ class AparelhoController extends Controller
 
     public function returnBySerial(Request $request)
     {
-        $aparelho = Aparelho::where('numero_serie', $request->numero_serie)->first();
+        $aparelho = Aparelho::where('numero_serie', $request->numero_serie)->firstOrFail();
         return $aparelho;
     }
 }

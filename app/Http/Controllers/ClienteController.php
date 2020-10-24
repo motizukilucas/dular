@@ -90,7 +90,7 @@ class ClienteController extends Controller
 
     public function returnByCel(Request $request)
     {
-        $cliente = Cliente::where('tel_celular', $request->tel_celular)->first();
+        $cliente = Cliente::where('tel_celular', $request->tel_celular)->firstOrFail();
         return $cliente;
     }
 }
