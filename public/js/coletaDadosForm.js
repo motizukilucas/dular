@@ -27,13 +27,14 @@ function coletaDadosAparelho()
     return aparelho;
 }
 
-function coletaDadosOrdemServico()
+function coletaDadosOrdemServico(cliente)
 {
     var ordem_servico = new Object();
+    ordem_servico.id_cliente = cliente.id;
+    ordem_servico.id_atendente = ($("[name='atendente']").val());
     ordem_servico.preco = ($("[name='preco']").val());
     ordem_servico.forma_pagamento = ($("[name='forma_pagamento']").val());
     ordem_servico.desconto = ($("[name='desconto']").val());
-    ordem_servico.atendente = ($("[name='atendente']").val());
     ordem_servico.status = ($("[name='status']").val());
     return ordem_servico;
 }

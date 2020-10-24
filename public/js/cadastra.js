@@ -28,11 +28,8 @@ function cadastraAparelho(aparelho)
     return result;
 }
 
-function cadastraOrdemServico(ordem_servico, id_cliente, id_atendente)
+function cadastraOrdemServico(ordem_servico)
 {
-    ordem_servico.id_cliente = id_cliente;
-    ordem_servico.id_atendente = id_atendente;
-
     var result = null;
     $.ajax({
     url: "api/ordem-servico",

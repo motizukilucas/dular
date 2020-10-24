@@ -21,8 +21,8 @@ function cadastra()
             aparelho = cadastraAparelho(dados_aparelho);
         }
         
-        dados_ordem_servico = coletaDadosOrdemServico();
-        ordem_servico = cadastraOrdemServico(dados_ordem_servico, cliente.id, 1);
+        dados_ordem_servico = coletaDadosOrdemServico(cliente);
+        ordem_servico = cadastraOrdemServico(dados_ordem_servico);
 
         // dados_ordem_servico_aparelho = coletaDadosOrdemServicoAparelho();
         // ordem_servico_aparelho = cadastraOrdemServicoAparelho(dados_ordem_servico_aparelho ,ordem_servico.id, aparelho.id);
