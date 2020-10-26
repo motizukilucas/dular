@@ -7,15 +7,15 @@ use Faker\Generator as Faker;
 
 $factory->define(OrdemServico::class, function (Faker $faker) {
     $status = [
-        'aguardando',
-        'pendente',
-        'devolução',
-        'entregue',
+        'AGUARDANDO',
+        'PENDENTE',
+        'DEVOLUCAO',
+        'ENTREGUE',
     ];
 
     $formas_pagamento = [
-        'dinheiro',
-        'cartao',
+        'DINHEIRO',
+        'CARTAO',
     ];
 
     return [
