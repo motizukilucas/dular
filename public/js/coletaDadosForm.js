@@ -39,10 +39,11 @@ function coletaDadosOrdemServico(id_cliente)
     return ordem_servico;
 }
 
-function coletaDadosOrdemServicoAparelho(id_aparelho)
+function coletaDadosOrdemServicoAparelho(id_ordem_servico, id_aparelho)
 {
     var ordem_servico_aparelho = new Object();
     ordem_servico_aparelho.id_aparelho = id_aparelho;
+    ordem_servico_aparelho.id_ordem_servico = id_ordem_servico;
     ordem_servico_aparelho.acessorios = ($("[name='acessorios']").val());
     ordem_servico_aparelho.defeito_informado = ($("[name='defeito_informado']").val());
     ordem_servico_aparelho.entrada = ($("[name='entrada']").val());
@@ -52,18 +53,20 @@ function coletaDadosOrdemServicoAparelho(id_aparelho)
     return ordem_servico_aparelho;
 }
 
-function coletaDadosOrdemServicoPeca()
+function coletaDadosOrdemServicoPeca(id_ordem_servico_aparelho)
 {
     var ordem_servico_peca = new Object();
+    ordem_servico_peca.id_ordem_servico_aparelho = id_ordem_servico_aparelho;
     ordem_servico_peca.peca = ($("[name='peca']").val());
-    ordem_servico_peca.peca_preco = ($("[name='peca_preco']").val());
+    ordem_servico_peca.preco = ($("[name='peca_preco']").val());
     return ordem_servico_peca;
 }
 
-function coletaDadosOrdemServicoTecnico()
+function coletaDadosOrdemServicoTecnico(id_ordem_servico_aparelho)
 {
     var ordem_servico_tecnico = new Object();
-    ordem_servico_tecnico.tecnico = ($("[name='tecnico']").val());
+    ordem_servico_tecnico.id_ordem_servico_aparelho = id_ordem_servico_aparelho;
+    ordem_servico_tecnico.id_tecnico = ($("[name='tecnico']").val());
     ordem_servico_tecnico.defeito_constatado = ($("[name='defeito_constatado']").val());
     return ordem_servico_tecnico;
 }

@@ -43,11 +43,8 @@ function cadastraOrdemServico(ordem_servico)
     return result;
 }
 
-function cadastraOrdemServicoAparelho(ordem_servico_aparelho, id_ordem_servico, id_aparelho)
+function cadastraOrdemServicoAparelho(ordem_servico_aparelho)
 {
-    ordem_servico_aparelho.id_ordem_servico = id_ordem_servico;
-    ordem_servico_aparelho.id_aparelho = id_aparelho;
-
     var result = null;
     $.ajax({
     url: "api/ordem-servico-aparelho",
@@ -61,10 +58,8 @@ function cadastraOrdemServicoAparelho(ordem_servico_aparelho, id_ordem_servico, 
     return result;
 }
 
-function cadastraOrdemServicoPeca(ordem_servico_peca, id_ordem_servico_aparelho)
+function cadastraOrdemServicoPeca(ordem_servico_peca)
 {
-    ordem_servico_peca.id_ordem_servico_aparelho = id_ordem_servico_aparelho;
-
     var result = null;
     $.ajax({
     url: "api/ordem-servico-peca",
@@ -78,11 +73,8 @@ function cadastraOrdemServicoPeca(ordem_servico_peca, id_ordem_servico_aparelho)
     return result;
 }
 
-function cadastraOrdemServicoTecnico(ordem_servico_tecnico, id_ordem_servico_aparelho, id_tecnico)
+function cadastraOrdemServicoTecnico(ordem_servico_tecnico)
 {
-    ordem_servico_tecnico.id_ordem_servico_aparelho = id_ordem_servico_aparelho;
-    ordem_servico_tecnico.id_tecnico = id_tecnico;
-
     var result = null;
     $.ajax({
     url: "api/ordem-servico-tecnico",
