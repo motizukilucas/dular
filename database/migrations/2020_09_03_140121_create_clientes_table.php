@@ -25,6 +25,7 @@ class CreateClientesTable extends Migration
             $table->string('rua')->nullable();
             $table->integer('numero')->nullable();
             $table->string('complemento')->nullable();
+            $table->string('bairro')->nullable();
             $table->string('cidade')->nullable();
             $table->string('estado')->nullable();
             $table->integer('cep')->nullable();

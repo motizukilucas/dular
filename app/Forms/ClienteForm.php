@@ -67,7 +67,15 @@ class ClienteForm
                 </div>
 
                 <div class="form-row">
-                    <div class="col-md-6 mb-3">
+                    <div class="col-md-3 mb-3">
+                        <label>Bairro</label>
+                        <input name="bairro" type="text" class="form-control">
+                        <div class="invalid-feedback">
+                            Forneça um bairro válida.
+                        </div>
+                    </div>
+                
+                    <div class="col-md-3 mb-3">
                         <label>Cidade</label>
                         <input name="cidade" type="text" class="form-control">
                         <div class="invalid-feedback">

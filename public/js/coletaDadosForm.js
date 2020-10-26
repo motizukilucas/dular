@@ -10,6 +10,7 @@ function coletaDadosCliente()
     cliente.rua = ($("[name='rua']").val());
     cliente.numero = ($("[name='numero']").val());
     cliente.complemento = ($("[name='complemento']").val());
+    cliente.bairro = ($("[name='bairro']").val());
     cliente.cidade = ($("[name='cidade']").val());
     cliente.estado = ($("[name='estado']").val());
     cliente.cep = ($("[name='cep']").val());
