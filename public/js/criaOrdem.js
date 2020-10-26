@@ -24,14 +24,21 @@ function submitForm()
         dados_ordem_servico = coletaDadosOrdemServico(cliente.id);
         ordem_servico = cadastraOrdemServico(dados_ordem_servico);
 
-        dados_ordem_servico_aparelho = coletaDadosOrdemServicoAparelho(aparelho.id);
-        // ordem_servico_aparelho = cadastraOrdemServicoAparelho(dados_ordem_servico_aparelho ,ordem_servico.id, aparelho.id);
+        dados_ordem_servico_aparelho = coletaDadosOrdemServicoAparelho(ordem_servico.id, aparelho.id);
+        ordem_servico_aparelho = cadastraOrdemServicoAparelho(dados_ordem_servico_aparelho);
         
-        // dados_ordem_servico_peca = coletaDadosOrdemServicoPeca();
-        // ordem_servico_peca = cadastraOrdemServicoPeca(dados_ordem_servico_peca, ordem_servico_aparelho.id);
+        dados_ordem_servico_peca = coletaDadosOrdemServicoPeca(ordem_servico_aparelho.id);
+        if (dados_ordem_servico_peca.peca)
+        {
+            ordem_servico_peca = cadastraOrdemServicoPeca(dados_ordem_servico_peca);
+        }
         
-        // dados_ordem_servico_tecnico = coletaDadosOrdemServicoTecnico();
-        // ordem_servico_tecnico = cadastraOrdemServicoTecnico(dados_ordem_servico_tecnico, ordem_servico_aparelho.id, tecnico.id);
+        dados_ordem_servico_tecnico = coletaDadosOrdemServicoTecnico(ordem_servico_aparelho.id);
+        if 
+        (dados_ordem_servico_tecnico.id_tecnico)
+        {
+            ordem_servico_tecnico = cadastraOrdemServicoTecnico(dados_ordem_servico_tecnico);
+        }
     });
 }
 
