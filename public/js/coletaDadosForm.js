@@ -27,10 +27,10 @@ function coletaDadosAparelho()
     return aparelho;
 }
 
-function coletaDadosOrdemServico(cliente)
+function coletaDadosOrdemServico(id_cliente)
 {
     var ordem_servico = new Object();
-    ordem_servico.id_cliente = cliente.id;
+    ordem_servico.id_cliente = id_cliente;
     ordem_servico.id_atendente = ($("[name='atendente']").val());
     ordem_servico.preco = ($("[name='preco']").val());
     ordem_servico.forma_pagamento = ($("[name='forma_pagamento']").val());
@@ -39,9 +39,10 @@ function coletaDadosOrdemServico(cliente)
     return ordem_servico;
 }
 
-function coletaDadosOrdemServicoAparelho()
+function coletaDadosOrdemServicoAparelho(id_aparelho)
 {
     var ordem_servico_aparelho = new Object();
+    ordem_servico_aparelho.id_aparelho = id_aparelho;
     ordem_servico_aparelho.acessorios = ($("[name='acessorios']").val());
     ordem_servico_aparelho.defeito_informado = ($("[name='defeito_informado']").val());
     ordem_servico_aparelho.entrada = ($("[name='entrada']").val());

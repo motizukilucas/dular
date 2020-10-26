@@ -1,8 +1,8 @@
 geraForm();
 adicionaEquipamento();
-cadastra();
+submitForm();
 
-function cadastra()
+function submitForm()
 {
     $("#cria-form").submit(function(event){
         event.preventDefault();
@@ -21,10 +21,10 @@ function cadastra()
             aparelho = cadastraAparelho(dados_aparelho);
         }
         
-        dados_ordem_servico = coletaDadosOrdemServico(cliente);
+        dados_ordem_servico = coletaDadosOrdemServico(cliente.id);
         ordem_servico = cadastraOrdemServico(dados_ordem_servico);
 
-        // dados_ordem_servico_aparelho = coletaDadosOrdemServicoAparelho();
+        dados_ordem_servico_aparelho = coletaDadosOrdemServicoAparelho(aparelho.id);
         // ordem_servico_aparelho = cadastraOrdemServicoAparelho(dados_ordem_servico_aparelho ,ordem_servico.id, aparelho.id);
         
         // dados_ordem_servico_peca = coletaDadosOrdemServicoPeca();
