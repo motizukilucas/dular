@@ -88,4 +88,9 @@ class OrdemServicoController extends Controller
     {
         OrdemServico::destroy($id);
     }
+
+    public function buscaForm($id)
+    {
+        return "oi";
+    }
 }

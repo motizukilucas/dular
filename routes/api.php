@@ -38,3 +38,5 @@ Route::resource('ordem-servico-tecnico', 'OrdemServicoTecnicoController');
 // Retorna routes
 Route::post('retorna-cliente', 'ClienteController@returnByCel');
 Route::post('retorna-aparelho', 'AparelhoController@returnBySerial');
+
+Route::post('busca-ordem'. 'OrdemServicoController@buscaForm');
