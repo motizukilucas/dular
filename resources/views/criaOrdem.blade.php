@@ -1,5 +1,6 @@
             @include('header')
 
+        <div class="container">
             <h1>
                 Ordem de serviço <span class="badge badge-secondary">NOVA</span>
             </h1>
