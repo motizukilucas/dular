@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Forms\OrdemServicoForm;
 use App\OrdemServico;
 use App\Funcionario;
+use App\Interfaces\OrdemServicoRepositoryInterface;
 
 class OrdemServicoController extends Controller
 {
@@ -89,8 +90,8 @@ class OrdemServicoController extends Controller
         OrdemServico::destroy($id);
     }
 
-    public function buscaForm($id)
+    public function buscaForm(Request $request, OrdemServicoRepositoryInterface $ordem_servico_repository)
     {
-        return "oi";
+        $ordem_servico_repository->buscaForm($request);
     }
 }
