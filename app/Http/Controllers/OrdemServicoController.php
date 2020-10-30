@@ -92,6 +92,7 @@ class OrdemServicoController extends Controller
 
     public function buscaForm(Request $request, OrdemServicoRepositoryInterface $ordem_servico_repository)
     {
-        $ordem_servico_repository->buscaForm($request);
+        $resultado = $ordem_servico_repository->buscaForm($request);
+        return $resultado;
     }
 }
