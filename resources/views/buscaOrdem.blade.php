@@ -7,6 +7,23 @@
                 <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Buscar</button>
             </form>
         </div>
+        <div class="container mt-3">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Ordem de Serviço</th>
+                        <th scope="col">Cliente</th>
+                        <th scope="col">Celular</th>
+                        <th scope="col">Equipamento</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Modelo</th>
+                        <th scope="col">Número de série</th>
+                    </tr>
+                </thead>
+                <tbody id="resultado">
+                </tbody>
+            </table>
+        </div>
         <script type="text/javascript" src="js/buscaOrdem.js"></script>
     </body>
 </html>
