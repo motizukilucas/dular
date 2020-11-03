@@ -40,4 +40,96 @@ class OrdemServicoRepository implements OrdemServicoRepositoryInterface
 
         return $output;
     }
+
+    public function geraEditarForm(Request $request)
+    {
+        // $atendente = DB::table('ordem_servicos')
+        // ->join('ordem_servico_funcionarios', 'ordem_servicos.id', '=', 'ordem_servico_funcionarios.id_ordem_servico')
+        // ->join('funcionarios', 'ordem_servico_funcionarios.id_funcionario', '=', 'funcionarios.id')
+        // ->where('ordem_servicos.id', $request->id)
+        // ->where('ordem_servico_funcionarios.servico', 'Atendimento')
+        // ->select(
+        //     'funcionarios.email',
+        //     'funcionarios.id')
+        // ->get();
+
+        // $tecnico = DB::table('ordem_servicos')
+        // ->join('ordem_servico_funcionarios', 'ordem_servicos.id', '=', 'ordem_servico_funcionarios.id_ordem_servico')
+        // ->join('funcionarios', 'ordem_servico_funcionarios.id_funcionario', '=', 'funcionarios.id')
+        // ->where('ordem_servicos.id', $request->id)
+        // ->where('ordem_servico_funcionarios.servico', 'Tecnico')
+        // ->select('funcionarios.email',
+        //         'funcionarios.id')
+        // ->get();
+
+        $cliente = DB::table('ordem_servicos')
+        ->join('clientes', 'ordem_servicos.id_cliente', '=', 'clientes.id')
+        ->where('ordem_servicos.id', $request->id)
+        ->select(
+                'clientes.id',
+                'clientes.nome',
+                'clientes.cpf_cnpj',
+                'clientes.email',
+                'clientes.tel_celular',
+                'clientes.tel_residencial',
+                'clientes.tel_comercial',
+                'clientes.rua',
+                'clientes.numero',
+                'clientes.complemento',
+                'clientes.cidade',
+                'clientes.estado',
+                'clientes.cep')
+        ->get();
+
+        // $ordem_servico = DB::table('ordem_servicos')
+        // ->where('ordem_servicos.id', $request->id)
+        // ->select(
+        //     'ordem_servicos.id',
+        //     'ordem_servicos.status',
+        //     'ordem_servicos.preco',
+        //     'ordem_servicos.forma_pagamento',    
+        //     'ordem_servicos.desconto')
+        // ->get();
+
+        // $aparelhos = DB::table('ordem_servicos')
+        // ->join('ordem_servico_aparelhos', 'ordem_servicos.id', '=', 'ordem_servico_aparelhos.id_ordem_servico')
+        // ->join('aparelhos', 'ordem_servico_aparelhos.id_aparelho', '=', 'aparelhos.id')
+        // ->where('ordem_servicos.id', $request->id)
+        // ->select(
+        //     'aparelhos.id',
+        //     'aparelhos.numero_serie',
+        //     'aparelhos.marca',
+        //     'aparelhos.modelo',
+        //     'aparelhos.tipo')
+        // ->get();
+        
+        // $os_aparelhos = DB::table('ordem_servicos')
+        // ->join('ordem_servico_aparelhos', 'ordem_servicos.id', '=', 'ordem_servico_aparelhos.id_ordem_servico')
+        // ->where('ordem_servicos.id', $request->id)
+        // ->select(
+        //     'ordem_servico_aparelhos.id',
+        //     'ordem_servico_aparelhos.acessorios',
+        //     'ordem_servico_aparelhos.defeito_informado',
+        //     'ordem_servico_aparelhos.defeito_constatado',
+        //     'ordem_servico_aparelhos.entrada',
+        //     'ordem_servico_aparelhos.saida',
+        //     'ordem_servico_aparelhos.retorno',
+        //     'ordem_servico_aparelhos.segunda_saida')
+        // ->get();
+
+        // $osa_pecas = DB::table('ordem_servicos')
+        // ->join('ordem_servico_aparelhos', 'ordem_servicos.id', '=', 'ordem_servico_aparelhos.id_ordem_servico')
+        // ->join('ordem_servico_aparelho_pecas', 'ordem_servico_aparelhos.id', '=', 'ordem_servico_aparelho_pecas.id_ordem_servico_aparelho')
+        // ->where('ordem_servicos.id', $request->id)
+        // ->select(
+        //     'ordem_servico_aparelho_pecas.id',
+        //     'ordem_servico_aparelho_pecas.peca',
+        //     'ordem_servico_aparelho_pecas.preco')
+        // ->get();
+    
+        return 
+        [
+            $cliente
+        ];
+    }
 }
