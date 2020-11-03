@@ -43,25 +43,6 @@ class OrdemServicoRepository implements OrdemServicoRepositoryInterface
 
     public function geraEditarForm(Request $request)
     {
-        // $atendente = DB::table('ordem_servicos')
-        // ->join('ordem_servico_funcionarios', 'ordem_servicos.id', '=', 'ordem_servico_funcionarios.id_ordem_servico')
-        // ->join('funcionarios', 'ordem_servico_funcionarios.id_funcionario', '=', 'funcionarios.id')
-        // ->where('ordem_servicos.id', $request->id)
-        // ->where('ordem_servico_funcionarios.servico', 'Atendimento')
-        // ->select(
-        //     'funcionarios.email',
-        //     'funcionarios.id')
-        // ->get();
-
-        // $tecnico = DB::table('ordem_servicos')
-        // ->join('ordem_servico_funcionarios', 'ordem_servicos.id', '=', 'ordem_servico_funcionarios.id_ordem_servico')
-        // ->join('funcionarios', 'ordem_servico_funcionarios.id_funcionario', '=', 'funcionarios.id')
-        // ->where('ordem_servicos.id', $request->id)
-        // ->where('ordem_servico_funcionarios.servico', 'Tecnico')
-        // ->select('funcionarios.email',
-        //         'funcionarios.id')
-        // ->get();
-
         $cliente = DB::table('ordem_servicos')
         ->join('clientes', 'ordem_servicos.id_cliente', '=', 'clientes.id')
         ->where('ordem_servicos.id', $request->id)
@@ -80,6 +61,25 @@ class OrdemServicoRepository implements OrdemServicoRepositoryInterface
                 'clientes.estado',
                 'clientes.cep')
         ->get();
+
+        $atendente = DB::table('ordem_servicos')
+        ->join('funcionarios', 'id_atendente', '=', 'funcionarios.id')
+        ->where('ordem_servicos.id', $request->id)
+        ->select(
+            'funcionarios.nome',
+            'funcionarios.id')
+        ->get();
+
+        $tecnico = DB::table('ordem_servicos')
+        ->join('ordem_servico_aparelhos', 'ordem_servicos.id', '=', 'ordem_servico_aparelhos.id_ordem_servico')
+        ->join('ordem_servico_tecnicos', 'ordem_servico_aparelhos.id', '=', 'ordem_servico_tecnicos.id_ordem_servico_aparelho')
+        ->join('funcionarios', 'ordem_servico_tecnicos.id_tecnico', '=', 'funcionarios.id')
+        ->where('ordem_servicos.id', $request->id)
+        ->select('funcionarios.nome',
+                'funcionarios.id')
+        ->get();
+
+        
 
         // $ordem_servico = DB::table('ordem_servicos')
         // ->where('ordem_servicos.id', $request->id)
@@ -129,7 +129,9 @@ class OrdemServicoRepository implements OrdemServicoRepositoryInterface
     
         return 
         [
-            $cliente
+            $cliente,
+            $atendente,
+            $tecnico,
         ];
     }
 }
