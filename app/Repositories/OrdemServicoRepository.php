@@ -27,7 +27,7 @@ class OrdemServicoRepository implements OrdemServicoRepositoryInterface
                     $output = '';
                     foreach($data as $row)
                     {
-                        $output .= '<tr>';
+                        $output .= '<tr class="click-editar">';
                         $output .= '<th scope="row">'.$row->id.'</th>';
                         $output .= '<td>'.$row->nome.'</td>';
                         $output .= '<td>'.$row->tel_celular.'</td>';

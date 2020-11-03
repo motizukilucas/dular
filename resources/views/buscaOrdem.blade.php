@@ -24,6 +24,12 @@
                 </tbody>
             </table>
         </div>
+
+        <form id="generateEditForm" method="POST" action="/api/gera-editar" style="display: none;">
+            @csrf
+            <input id="generateEditInput" type="number" name="id">
+        </form>
+
         <script type="text/javascript" src="js/buscaOrdem.js"></script>
     </body>
 </html>

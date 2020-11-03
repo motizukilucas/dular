@@ -11,6 +11,8 @@ function buscaFormSubmit()
             data:$(this).serialize(),
             success:function(data) {
                 fillResultado(data);
+
+                clickEditar();
             }
         });
     });
@@ -19,4 +21,16 @@ function buscaFormSubmit()
 function fillResultado(resultado)
 {
     $("#resultado").html(resultado);
+}
+
+function clickEditar()
+{
+    $('.click-editar').on('click', function() {
+        input = $('#generateEditInput');
+        
+        var id = $(this).children("th").html();
+        
+        input.val(id);
+        $('#generateEditForm').submit();
+    });
 }
