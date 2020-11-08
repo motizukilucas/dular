@@ -10,7 +10,7 @@ function buscaFormSubmit()
             type:'post',
             data:$(this).serialize(),
             success:function(data) {
-                fillResultado(data);
+                $("#resultado").html(data);
 
                 clickEditar();
             }
@@ -18,10 +18,10 @@ function buscaFormSubmit()
     });
 }
 
-function fillResultado(resultado)
-{
-    $("#resultado").html(resultado);
-}
+// function preencheResultado(resultado)
+// {
+//     $("#resultado").html(resultado);
+// }
 
 function clickEditar()
 {
@@ -31,6 +31,7 @@ function clickEditar()
         var id = $(this).children("th").html();
         
         input.val(id);
+
         $('#generateEditForm').submit();
     });
 }

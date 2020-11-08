@@ -6,8 +6,7 @@
                 <input class="form-control mr-sm-2 col-md-4" name="query" type="search" placeholder="Buscar" aria-label="Buscar">
                 <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Buscar</button>
             </form>
-        </div>
-        <div class="container mt-3">
+
             <table class="table table-hover">
                 <thead>
                     <tr>
