@@ -99,17 +99,7 @@ class OrdemServicoController extends Controller
     public function geraEditarForm(Request $request, OrdemServicoRepositoryInterface $ordem_servico_repository)
     {
         $resultado = $ordem_servico_repository->geraEditarForm($request);
-        dd($resultado);
         
-
-        // return view('/editar',[ 
-        //     'cliente' => $cliente,
-        //     'aparelhos' => $aparelhos,
-        //     'os_aparelhos' => $os_aparelhos,
-        //     'ordem_servico' => $ordem_servico,
-        //     'atendente' => $atendente,
-        //     'tecnico' => $tecnico,
-        //     'osa_pecas' => $osa_pecas,
-        // ]);
+        return view('/editaOrdem', $resultado);
     }
 }

@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/cria-ordem', function () {
     return view('criaOrdem');
 });
+
+Route::get('/edita-ordem', function () {
+    return view('editaOrdem');
+});
