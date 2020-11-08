@@ -18,11 +18,6 @@ function buscaFormSubmit()
     });
 }
 
-// function preencheResultado(resultado)
-// {
-//     $("#resultado").html(resultado);
-// }
-
 function clickEditar()
 {
     $('.click-editar').on('click', function() {
