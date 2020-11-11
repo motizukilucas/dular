@@ -132,16 +132,17 @@ class OrdemServicoRepository implements OrdemServicoRepositoryInterface
             'ordem_servico_pecas.preco')
         ->get();
     
-        return 
+
+        return
         [
-            $cliente,
-            $atendente,
-            $tecnico,
-            $ordem_servico,
-            $aparelhos,
-            $os_aparelhos,
-            $os_tecnicos,
-            $osa_pecas
+            'cliente' => $cliente,
+            'atendente' => $atendente,
+            'tecnico' => $tecnico,
+            'ordem_servico' =>$ordem_servico,
+            'aparelho' => $aparelhos,
+            'os_aparelho' => $os_aparelhos,
+            'os_tecnico' => $os_tecnicos,
+            'os_pecas' => $osa_pecas
         ];
     }
 }
