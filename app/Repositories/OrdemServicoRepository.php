@@ -138,7 +138,7 @@ class OrdemServicoRepository implements OrdemServicoRepositoryInterface
             'cliente' => $cliente,
             'atendente' => $atendente,
             'tecnico' => $tecnico,
-            'ordem_servico' =>$ordem_servico,
+            'ordem_servico' => $ordem_servico,
             'aparelho' => $aparelhos,
             'os_aparelho' => $os_aparelhos,
             'os_tecnico' => $os_tecnicos,
