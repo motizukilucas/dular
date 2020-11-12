@@ -24,7 +24,7 @@
             </table>
         </div>
 
-        <form id="generateEditForm" method="POST" action="/api/gera-editar" style="display: none;">
+        <form id="generateEditForm" method="POST" action="/gera-editar" style="display: none;">
             @csrf
             <input id="generateEditInput" type="number" name="id">
         </form>
