@@ -21,6 +21,11 @@ Route::get('/cria-ordem', function () {
     return view('criaOrdem');
 });
 
+// tá aqui porque o /edita-ordem é carregado nesse gera-editar
+Route::post('gera-editar', 'OrdemServicoController@geraEditarForm');
+
 Route::get('/edita-ordem', function () {
     return view('editaOrdem');
 });
+
+

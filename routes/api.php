@@ -40,5 +40,3 @@ Route::post('retorna-cliente', 'ClienteController@returnByCel');
 Route::post('retorna-aparelho', 'AparelhoController@returnBySerial');
 
 Route::post('busca-ordem', 'OrdemServicoController@buscaForm');
-
-Route::post('gera-editar', 'OrdemServicoController@geraEditarForm');
