@@ -20,6 +20,7 @@ $factory->define(Cliente::class, function (FakerGenerator $faker) {
         'rua' => $faker->streetName,
         'numero' => $faker->buildingNumber,
         'complemento' => $faker->secondaryAddress,
+        'bairro' => $faker->word,
         'cidade' => $faker->city,
         'estado' => $faker->regionAbbr,
         'cep' => preg_replace('/-/', '', $faker->postcode),
