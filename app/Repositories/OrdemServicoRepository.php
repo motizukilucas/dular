@@ -47,19 +47,7 @@ class OrdemServicoRepository implements OrdemServicoRepositoryInterface
         ->join('clientes', 'ordem_servicos.id_cliente', '=', 'clientes.id')
         ->where('ordem_servicos.id', $request->id)
         ->select(
-                'clientes.id',
-                'clientes.nome',
-                'clientes.cpf_cnpj',
-                'clientes.email',
-                'clientes.tel_celular',
-                'clientes.tel_residencial',
-                'clientes.tel_comercial',
-                'clientes.rua',
-                'clientes.numero',
-                'clientes.complemento',
-                'clientes.cidade',
-                'clientes.estado',
-                'clientes.cep')
+                'clientes.*')
         ->get();
 
         $atendente = DB::table('ordem_servicos')
