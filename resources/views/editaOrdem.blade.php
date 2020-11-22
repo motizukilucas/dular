@@ -177,57 +177,7 @@
         </div>
         
         <script type="text/javascript" src="js/coletaDadosForm.js"></script>
-        <script>
-                $("#edita-form").submit(function(event){
-                    event.preventDefault();
-                    
-                    dados_cliente = coletaDadosCliente();
-                    dados_cliente.id = ($("[name='id_cliente']").val());
-                    
-                    cliente = atualizaCliente(dados_cliente);
-                });
-
-                function atualizaCliente(dados_cliente)
-                {
-                    var result = null;
-                    $.ajax({
-                    url: "api/cliente/"+dados_cliente.id,
-                    type: 'put',
-                    data: dados_cliente,
-                    async: false,
-                    success: function(data) {
-                        result = data;
-                    } 
-                    });
-                    return result;
-                }
-
-                // $("#edita-form").submit(function(event)
-                // {
-                //     event.preventDefault();
-                    
-                //     console.log("Oi");
-                    
-                //     dados_cliente = coletaDadosCliente();
-                //     dados_cliente.id = ($("[name='id_cliente']").val());
-                //     cliente =  atualizaCliente(dados_cliente);
-                    
-                // }
-
-                // public function atualizaCliente(cliente)
-                // {
-                //     var result = null;
-                //     $.ajax({
-                //     url: "api/cliente/"+cliente.id,
-                //     type: 'post',
-                //     data: cliente,
-                //     async: false,
-                //     success: function(data) {
-                //         result = data;
-                //     } 
-                //     });
-                //     return result;
-                // }
-        </script>
+        <script type="text/javascript" src="js/atualiza.js"></script>
+        <script type="text/javascript" src="js/editaOrdem.js"></script>
     </body>
 </html>

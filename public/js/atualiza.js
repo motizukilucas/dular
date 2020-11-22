@@ -1,0 +1,29 @@
+function atualizaCliente(dados_cliente)
+{
+    var result = null;
+    $.ajax({
+    url: "api/cliente/"+dados_cliente.id,
+    type: 'put',
+    data: dados_cliente,
+    async: false,
+    success: function(data) {
+        result = data;
+    } 
+    });
+    return result;
+}
+
+function atualizaAparelho(dados_aparelho)
+{
+    var result = null;
+    $.ajax({
+    url: "api/aparelho/"+dados_aparelho.id,
+    type: 'put',
+    data: dados_aparelho,
+    async: false,
+    success: function(data) {
+        result = data;
+    } 
+    });
+    return result;
+}
