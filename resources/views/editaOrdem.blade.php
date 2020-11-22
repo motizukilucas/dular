@@ -2,9 +2,9 @@
 
         <div class="container">
             <h1>
-                Ordem de serviço <span class="badge badge-secondary"><?php echo $cliente[0]->id ?></span>
+                Ordem de serviço <span class="badge badge-secondary"><?php echo $ordem_servico[0]->id ?></span>
             </h1>
-            <form method="POST" action="/api/edita-ordem" class="needs-validation" novalidate>
+            <form id="edita-form" class="needs-validation" novalidate>
                 @csrf
                 
                 <!-- cliente form -->
@@ -172,5 +172,62 @@
                     </div>
                 </div>
 
+                <button class="btn btn-primary" type="submit">Atualiza ordem</button>
             </form>
         </div>
+        
+        <script type="text/javascript" src="js/coletaDadosForm.js"></script>
+        <script>
+                $("#edita-form").submit(function(event){
+                    event.preventDefault();
+                    
+                    dados_cliente = coletaDadosCliente();
+                    dados_cliente.id = ($("[name='id_cliente']").val());
+                    
+                    cliente = atualizaCliente(dados_cliente);
+                });
+
+                function atualizaCliente(dados_cliente)
+                {
+                    var result = null;
+                    $.ajax({
+                    url: "api/cliente/"+dados_cliente.id,
+                    type: 'put',
+                    data: dados_cliente,
+                    async: false,
+                    success: function(data) {
+                        result = data;
+                    } 
+                    });
+                    return result;
+                }
+
+                // $("#edita-form").submit(function(event)
+                // {
+                //     event.preventDefault();
+                    
+                //     console.log("Oi");
+                    
+                //     dados_cliente = coletaDadosCliente();
+                //     dados_cliente.id = ($("[name='id_cliente']").val());
+                //     cliente =  atualizaCliente(dados_cliente);
+                    
+                // }
+
+                // public function atualizaCliente(cliente)
+                // {
+                //     var result = null;
+                //     $.ajax({
+                //     url: "api/cliente/"+cliente.id,
+                //     type: 'post',
+                //     data: cliente,
+                //     async: false,
+                //     success: function(data) {
+                //         result = data;
+                //     } 
+                //     });
+                //     return result;
+                // }
+        </script>
+    </body>
+</html>
