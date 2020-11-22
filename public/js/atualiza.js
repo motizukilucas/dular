@@ -27,3 +27,18 @@ function atualizaAparelho(dados_aparelho)
     });
     return result;
 }
+
+function atualizaOsAparelho(dados_os_aparelho)
+{
+    var result = null;
+    $.ajax({
+    url: "api/ordem-servico-aparelho/"+dados_os_aparelho.id,
+    type: 'put',
+    data: dados_os_aparelho,
+    async: false,
+    success: function(data) {
+        result = data;
+    } 
+    });
+    return result;
+}

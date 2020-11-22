@@ -12,4 +12,11 @@ $("#edita-form").submit(function(event){
     dados_aparelho.id = ($("[name='id_aparelho']").val());
 
     aparelho = atualizaAparelho(dados_aparelho);
+
+    // atualiza os aparelho
+    dados_os_aparelho = coletaDadosOrdemServicoAparelho();
+    dados_os_aparelho.id = ($("[name='id_os_aparelho']").val());
+
+    os_aparelho = atualizaOsAparelho(dados_os_aparelho);
+
 });

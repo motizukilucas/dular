@@ -173,7 +173,6 @@
                 </div>
 
                 <!-- ordem servico aparelho form -->
-                <?php dump($os_aparelho[0]) ?>
                 <input type="hidden" name="id_os_aparelho" value="<?php echo $os_aparelho[0]->id ?>">
 
                 <div class="form-row">
@@ -212,6 +211,8 @@
                         <input name="segunda_saida"  value="<?php echo $os_aparelho[0]->segunda_saida ?>" type="date" class="form-control">    
                     </div>
                 </div>
+
+
 
                 <button class="btn btn-primary" type="submit">Atualiza ordem</button>
             </form>
