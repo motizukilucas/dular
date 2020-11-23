@@ -19,4 +19,10 @@ $("#edita-form").submit(function(event){
 
     os_aparelho = atualizaOsAparelho(dados_os_aparelho);
 
+    // atualiza os peca
+    dados_os_peca = coletaDadosOrdemServicoPeca();
+    dados_os_peca.id = ($("[name='id_os_peca']").val());
+
+    os_peca = atualizaOsPeca(dados_os_peca);
+
 });

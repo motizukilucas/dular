@@ -42,3 +42,18 @@ function atualizaOsAparelho(dados_os_aparelho)
     });
     return result;
 }
+
+function atualizaOsPeca(dados_os_peca)
+{
+    var result = null;
+    $.ajax({
+    url: "api/ordem-servico-peca/"+dados_os_peca.id,
+    type: 'put',
+    data: dados_os_peca,
+    async: false,
+    success: function(data) {
+        result = data;
+    } 
+    });
+    return result;
+}
