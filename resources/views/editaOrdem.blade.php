@@ -237,6 +237,27 @@
                     </div>
                 </div>
 
+                <!-- ordem servico tecnico form -->
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label>Técnico responsável</label>
+                        <select name="tecnico" class="custom-select" required>
+                        <option>TODO</option>
+                    </select>
+                    <div class="invalid-feedback">
+                            Forneça um técnico responsável válido.
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label>Defeito constatado</label>
+                        <textarea name="defeito_constatado" class="form-control" rows="3" required><?php echo $os_tecnico[0]->defeito_constatado ?></textarea>
+                        <div class="invalid-feedback">
+                            Forneça o laudo técnico.
+                        </div>
+                    </div>
+                 </div>
+
                 <button class="btn btn-primary" type="submit">Atualiza ordem</button>
             </form>
         </div>
