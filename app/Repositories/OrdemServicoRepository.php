@@ -109,7 +109,7 @@ class OrdemServicoRepository implements OrdemServicoRepositoryInterface
         ->select(
             'ordem_servico_tecnicos.id',
             'ordem_servico_tecnicos.id_tecnico',
-            'ordem_servico_tecnicos.defeito_constatado',)
+            'ordem_servico_tecnicos.defeito_constatado')
         ->get();
 
         $osa_pecas = DB::table('ordem_servicos')
