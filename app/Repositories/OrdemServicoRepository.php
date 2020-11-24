@@ -107,7 +107,9 @@ class OrdemServicoRepository implements OrdemServicoRepositoryInterface
         ->join('ordem_servico_tecnicos', 'ordem_servicos.id', '=', 'ordem_servico_tecnicos.id_ordem_servico_aparelho')
         ->where('ordem_servicos.id', $request->id)
         ->select(
-            'ordem_servico_tecnicos.defeito_constatado')
+            'ordem_servico_tecnicos.id',
+            'ordem_servico_tecnicos.id_tecnico',
+            'ordem_servico_tecnicos.defeito_constatado',)
         ->get();
 
         $osa_pecas = DB::table('ordem_servicos')
