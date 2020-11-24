@@ -18,13 +18,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Form routes
+// Form create routes
 Route::get('cliente-form', 'ClienteController@create');
 Route::get('aparelho-form', 'AparelhoController@create');
 Route::get('ordem-servico-form', 'OrdemServicoController@create');
 Route::get('ordem-servico-tecnico-form', 'OrdemServicoTecnicoController@create');
 Route::get('ordem-servico-aparelho-form', 'OrdemServicoAparelhoController@create');
 Route::get('ordem-servico-peca-form', 'OrdemServicoPecaController@create');
+
+// Form edit routes
+Route::get('ordem-servico-tecnico-edit-form/{id_os_tecnico}', 'OrdemServicoTecnicoController@edit');
 
 // Resource routes
 Route::resource('cliente', 'ClienteController');

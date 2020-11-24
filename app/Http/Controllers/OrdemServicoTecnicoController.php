@@ -24,7 +24,7 @@ class OrdemServicoTecnicoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
         return OrdemServicoTecnicoForm::create(Funcionario::all());
     }
@@ -61,7 +61,10 @@ class OrdemServicoTecnicoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $os_tecnico = OrdemServicoTecnico::findOrFail($id);
+        $tecnico = Funcionario::findOrFail($os_tecnico->id_tecnico);
+        
+        return OrdemServicoTecnicoForm::edit($os_tecnico, $tecnico, Funcionario::all());
     }
 
     /**

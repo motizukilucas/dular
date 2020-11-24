@@ -238,27 +238,8 @@
                 </div>
 
                 <!-- ordem servico tecnico form -->
-                <?php dump($os_tecnico[0]) ?>
-
-                <div class="form-row">
-                    <div class="col-md-6 mb-3">
-                        <label>Técnico responsável</label>
-                        <select name="tecnico" class="custom-select" required>
-                        <option>TODO</option>
-                    </select>
-                    <div class="invalid-feedback">
-                            Forneça um técnico responsável válido.
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label>Defeito constatado</label>
-                        <textarea name="defeito_constatado" class="form-control" rows="3" required><?php echo $os_tecnico[0]->defeito_constatado ?></textarea>
-                        <div class="invalid-feedback">
-                            Forneça o laudo técnico.
-                        </div>
-                    </div>
-                 </div>
+                <input type="hidden" name="id_tecnico" value="<?php echo $os_tecnico[0]->id_tecnico ?>">
+                <input type="hidden" name="id_os_tecnico" value="<?php echo $os_tecnico[0]->id ?>">
 
                 <!-- ordem servico form -->
                 <input type="hidden" name="id_ordem_servico" value="<?php echo $ordem_servico[0]->id ?>">
@@ -340,5 +321,34 @@
         <script type="text/javascript" src="js/coletaDadosForm.js"></script>
         <script type="text/javascript" src="js/atualiza.js"></script>
         <script type="text/javascript" src="js/editaOrdem.js"></script>
+        <script>
+            dados_os_tecnico = coletaDadosOrdemServicoTecnico();
+            dados_os_tecnico.id_tecnico = ($("[name='id_tecnico']").val());
+            dados_os_tecnico.id = ($("[name='id_os_tecnico']").val());
+
+            geraForm(dados_os_tecnico);
+
+            function carregaOrdemServicoTecnicoEditForm(dados_os_tecnico) 
+            {
+                var result = null;
+                $.ajax({
+                url: "api/ordem-servico-tecnico-edit-form/"+dados_os_tecnico.id,
+                type: 'get',
+                dataType: 'html',
+                async: false,
+                success: function(data) {
+                    result = data;
+                } 
+                });
+                return result;
+            }
+
+            function geraForm(dados_os_tecnico)
+            {
+                var form = '';
+                form += carregaOrdemServicoTecnicoEditForm(dados_os_tecnico);
+                $(".btn-primary").before(form);
+            }
+        </script>
     </body>
 </html>
