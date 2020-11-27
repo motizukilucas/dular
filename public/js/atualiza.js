@@ -57,3 +57,33 @@ function atualizaOsPeca(dados_os_peca)
     });
     return result;
 }
+
+function atualizaOsPeca(dados_os_peca)
+{
+    var result = null;
+    $.ajax({
+    url: "api/ordem-servico-peca/"+dados_os_peca.id,
+    type: 'put',
+    data: dados_os_peca,
+    async: false,
+    success: function(data) {
+        result = data;
+    } 
+    });
+    return result;
+}
+
+function atualizaOsTecnico(dados_os_tecnico)
+{
+    var result = null;
+    $.ajax({
+    url: "api/ordem-servico-tecnico/"+dados_os_tecnico.id,
+    type: 'put',
+    data: dados_os_tecnico,
+    async: false,
+    success: function(data) {
+        result = data;
+    } 
+    });
+    return result;
+}

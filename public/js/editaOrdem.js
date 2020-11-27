@@ -43,5 +43,11 @@ function submitForm()
 
         os_peca = atualizaOsPeca(dados_os_peca);
 
+        // atualiza os tecnico
+        dados_os_tecnico = coletaDadosOrdemServicoTecnico(dados_os_aparelho.id);
+        dados_os_tecnico.id = ($("[name='id_os_tecnico']").val());
+
+        os_tecnico = atualizaOsTecnico(dados_os_tecnico);
+
     });
 }

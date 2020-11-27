@@ -322,8 +322,5 @@
         <script type="text/javascript" src="js/coletaDadosForm.js"></script>
         <script type="text/javascript" src="js/atualiza.js"></script>
         <script type="text/javascript" src="js/editaOrdem.js"></script>
-        <script>
-            
-        </script>
     </body>
 </html>
