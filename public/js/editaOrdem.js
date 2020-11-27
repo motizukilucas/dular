@@ -1,5 +1,10 @@
 submitForm();
 
+// coleta dados ordem_servico
+dados_ordem_servico = coletaDadosOrdemServico();
+dados_ordem_servico.id_atendente = ($("[name='id_atendente']").val());
+dados_ordem_servico.id = ($("[name='id_ordem_servico']").val());
+
 // coleta dados OS tecnico
 dados_os_tecnico = coletaDadosOrdemServicoTecnico();
 dados_os_tecnico.id_tecnico = ($("[name='id_tecnico']").val());
@@ -10,6 +15,7 @@ geraForm(dados_os_tecnico);
 function geraForm(dados_os_tecnico)
 {
     var form = '';
+    form += carregaOrdemServicoEditForm(dados_os_tecnico);
     form += carregaOrdemServicoTecnicoEditForm(dados_os_tecnico);
     $(".btn-primary").before(form);
 }

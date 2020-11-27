@@ -70,11 +70,7 @@ class OrdemServicoRepository implements OrdemServicoRepositoryInterface
         $ordem_servico = DB::table('ordem_servicos')
         ->where('ordem_servicos.id', $request->id)
         ->select(
-            'ordem_servicos.id',
-            'ordem_servicos.status',
-            'ordem_servicos.preco',
-            'ordem_servicos.forma_pagamento',    
-            'ordem_servicos.desconto')
+            'ordem_servicos.*')
         ->get();
 
         $aparelhos = DB::table('ordem_servicos')

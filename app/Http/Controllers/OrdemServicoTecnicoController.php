@@ -24,7 +24,7 @@ class OrdemServicoTecnicoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function create()
     {
         return OrdemServicoTecnicoForm::create(Funcionario::all());
     }

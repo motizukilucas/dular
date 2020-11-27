@@ -62,7 +62,10 @@ class OrdemServicoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ordem_servico = OrdemServico::findOrFail($id);
+        $atendente = Funcionario::findOrFail($ordem_servico->id_atendente);
+        
+        return OrdemServicoForm::edit($ordem_servico, $atendente, Funcionario::all());
     }
 
     /**
