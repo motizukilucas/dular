@@ -1,5 +1,19 @@
 submitForm();
 
+// coleta dados OS tecnico
+dados_os_tecnico = coletaDadosOrdemServicoTecnico();
+dados_os_tecnico.id_tecnico = ($("[name='id_tecnico']").val());
+dados_os_tecnico.id = ($("[name='id_os_tecnico']").val());
+
+geraForm(dados_os_tecnico);
+
+function geraForm(dados_os_tecnico)
+{
+    var form = '';
+    form += carregaOrdemServicoTecnicoEditForm(dados_os_tecnico);
+    $(".btn-primary").before(form);
+}
+
 function submitForm()
 {
     $("#edita-form").submit(function(event){

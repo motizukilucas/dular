@@ -318,37 +318,12 @@
             </form>
         </div>
         
+        <script type="text/javascript" src="js/carregaEditForms.js"></script>
         <script type="text/javascript" src="js/coletaDadosForm.js"></script>
         <script type="text/javascript" src="js/atualiza.js"></script>
         <script type="text/javascript" src="js/editaOrdem.js"></script>
         <script>
-            dados_os_tecnico = coletaDadosOrdemServicoTecnico();
-            dados_os_tecnico.id_tecnico = ($("[name='id_tecnico']").val());
-            dados_os_tecnico.id = ($("[name='id_os_tecnico']").val());
-
-            geraForm(dados_os_tecnico);
-
-            function carregaOrdemServicoTecnicoEditForm(dados_os_tecnico) 
-            {
-                var result = null;
-                $.ajax({
-                url: "api/ordem-servico-tecnico-edit-form/"+dados_os_tecnico.id,
-                type: 'get',
-                dataType: 'html',
-                async: false,
-                success: function(data) {
-                    result = data;
-                } 
-                });
-                return result;
-            }
-
-            function geraForm(dados_os_tecnico)
-            {
-                var form = '';
-                form += carregaOrdemServicoTecnicoEditForm(dados_os_tecnico);
-                $(".btn-primary").before(form);
-            }
+            
         </script>
     </body>
 </html>
