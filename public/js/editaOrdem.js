@@ -15,8 +15,9 @@ geraForm(dados_os_tecnico);
 function geraForm(dados_os_tecnico)
 {
     var form = '';
-    form += carregaOrdemServicoEditForm(dados_os_tecnico);
     form += carregaOrdemServicoTecnicoEditForm(dados_os_tecnico);
+    form += '<hr>';
+    form += carregaOrdemServicoEditForm(dados_os_tecnico);
     $(".btn-primary").before(form);
 }
 
