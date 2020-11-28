@@ -73,6 +73,21 @@ function atualizaOsPeca(dados_os_peca)
     return result;
 }
 
+function atualizaOrdemServico(dados_ordem_servico)
+{
+    var result = null;
+    $.ajax({
+    url: "api/ordem-servico/"+dados_ordem_servico.id,
+    type: 'put',
+    data: dados_ordem_servico,
+    async: false,
+    success: function(data) {
+        result = data;
+    } 
+    });
+    return result;
+}
+
 function atualizaOsTecnico(dados_os_tecnico)
 {
     var result = null;

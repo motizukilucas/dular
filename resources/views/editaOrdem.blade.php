@@ -213,13 +213,13 @@
                 </div>
 
                 <!-- ordem servico peca form -->
-                <input type="hidden" name="id_os_peca" value="<?php echo $os_pecas[0]->id ?>">
+                <input type="hidden" name="id_os_peca" value="<?php if (isset($os_pecas[0]->id)) echo $os_pecas[0]->id ?>">
 
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
                         <label>Peça trocada</label>
                         <div class="input-group">
-                            <input name="peca" value="<?php echo $os_pecas[0]->peca ?>" type="text" class="form-control">    
+                            <input name="peca" value="<?php if (isset($os_pecas[0]->peca)) echo $os_pecas[0]->peca ?>" type="text" class="form-control">    
                         </div>
                     </div>
 
@@ -229,7 +229,7 @@
                             <div class="input-group-prepend">
                                 <div class="input-group-text">R$</div>
                             </div>
-                            <input name="peca_preco" value="<?php echo $os_pecas[0]->preco ?>" type="text" class="form-control">    
+                            <input name="peca_preco" value="<?php if (isset($os_pecas[0]->preco)) echo $os_pecas[0]->preco ?>" type="text" class="form-control">    
                         </div>
                         <div class="invalid-feedback">
                             Forneça um valor válido.

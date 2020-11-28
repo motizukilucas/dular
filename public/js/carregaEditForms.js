@@ -1,8 +1,6 @@
 
 function carregaOrdemServicoEditForm(dados_ordem_servico) 
 {
-    console.log("Hello world!");
-
     var result = null;
     $.ajax({
     url: "api/ordem-servico-edit-form/"+dados_ordem_servico.id,

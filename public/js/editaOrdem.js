@@ -49,6 +49,12 @@ function submitForm()
 
         os_peca = atualizaOsPeca(dados_os_peca);
 
+        // atualiza ordem servico
+        dados_ordem_servico = coletaDadosOrdemServico(dados_cliente.id);
+        dados_ordem_servico.id = ($("[name='id_ordem_servico']").val());
+
+        ordem_servico = atualizaOrdemServico(dados_ordem_servico);
+
         // atualiza os tecnico
         dados_os_tecnico = coletaDadosOrdemServicoTecnico(dados_os_aparelho.id);
         dados_os_tecnico.id = ($("[name='id_os_tecnico']").val());
