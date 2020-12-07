@@ -238,7 +238,6 @@
                 </div>
 
                 <!-- ordem servico tecnico form -->
-                <?php dump($os_tecnico) ?>
                 <input type="hidden" name="id_tecnico" value="<?php if (isset($os_tecnico[0])) echo $os_tecnico[0]->id_tecnico ?>">
                 <input type="hidden" name="id_os_tecnico" value="<?php if (isset($os_tecnico[0])) echo $os_tecnico[0]->id ?>">
 
