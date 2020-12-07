@@ -60,7 +60,9 @@ class OrdemServicoPecaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $os_peca = OrdemServicoPeca::findOrFail($id);
+        
+        return OrdemServicoPecaForm::edit($os_peca);
     }
 
     /**

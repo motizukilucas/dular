@@ -29,6 +29,7 @@ Route::get('ordem-servico-peca-form', 'OrdemServicoPecaController@create');
 // Form edit routes
 Route::get('ordem-servico-tecnico-edit-form/{id_os_tecnico}', 'OrdemServicoTecnicoController@edit');
 Route::get('ordem-servico-edit-form/{id_ordem_servico}', 'OrdemServicoController@edit');
+Route::get('ordem-servico-peca-edit-form/{id_os_peca}', 'OrdemServicoPecaController@edit');
 
 // Resource routes
 Route::resource('cliente', 'ClienteController');
