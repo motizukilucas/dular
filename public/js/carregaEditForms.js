@@ -43,3 +43,18 @@ function carregaOrdemServicoPecaEditForm(dados_os_peca)
     });
     return result;
 }
+
+function carregaOrdemServicoAparelhoEditForm(dados_os_aparelho) 
+{
+    var result = null;
+    $.ajax({
+    url: "api/ordem-servico-aparelho-edit-form/"+dados_os_aparelho.id,
+    type: 'get',
+    dataType: 'html',
+    async: false,
+    success: function(data) {
+        result = data;
+    } 
+    });
+    return result;
+}

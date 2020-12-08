@@ -60,7 +60,9 @@ class OrdemServicoAparelhoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $os_aparelho = OrdemServicoAparelho::findOrFail($id);
+        
+        return OrdemServicoAparelhoForm::edit($os_aparelho);
     }
 
     /**

@@ -134,7 +134,7 @@
                     </div>
                 </div>
 
-                <!-- apecaform -->
+                <!-- aparelho form -->
                 <hr>
                 <input type="hidden" name="id_aparelho" value="<?php echo $aparelho['0']->id ?>">
 
@@ -174,43 +174,6 @@
 
                 <!-- ordem servico aparelho form -->
                 <input type="hidden" name="id_os_aparelho" value="<?php echo $os_aparelho[0]->id ?>">
-
-                <div class="form-row">
-                    <div class="col-md-6 mb-3">
-                        <label>Acessórios</label>
-                        <textarea name="acessorios" class="form-control" rows="3"><?php echo $os_aparelho[0]->acessorios ?></textarea>
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label>Defeito informado</label>
-                        <textarea name="defeito_informado" class="form-control" rows="3" required><?php echo $os_aparelho[0]->defeito_informado ?></textarea>
-                        <div class="invalid-feedback">
-                            Forneça o defeito informado.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="col-md-3 mb-3">
-                        <label>Entrada</label>
-                        <input name="entrada"  value="<?php echo $os_aparelho[0]->entrada ?>" type="date" class="form-control">
-                    </div>
-
-                    <div class="col-md-3 mb-3">
-                        <label>Saída</label>
-                        <input name="saida"  value="<?php echo $os_aparelho[0]->saida ?>" type="date" class="form-control">    
-                    </div>
-
-                    <div class="col-md-3 mb-3">
-                        <label>Retorno</label>
-                        <input name="retorno"  value="<?php echo $os_aparelho[0]->retorno ?>" type="date" class="form-control">    
-                    </div>
-
-                    <div class="col-md-3 mb-3">
-                        <label>Segunda saída</label>
-                        <input name="segunda_saida"  value="<?php echo $os_aparelho[0]->segunda_saida ?>" type="date" class="form-control">    
-                    </div>
-                </div>
 
                 <!-- ordem servico peca form -->
                 <input type="hidden" name="id_os_peca" value="<?php if (isset($os_pecas[0]->id)) echo $os_pecas[0]->id ?>">
