@@ -138,40 +138,6 @@
                 <hr>
                 <input type="hidden" name="id_aparelho" value="<?php echo $aparelho['0']->id ?>">
 
-                <div class="form-row">
-                    <div class="col-md-3 mb-3">
-                        <label>Equipamento</label>
-                        <input name="tipo" value="<?php echo $aparelho['0']->tipo ?>" type="text" class="form-control" required>
-                        <div class="invalid-feedback">
-                            Selecione um equipamento válido.
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 mb-3">
-                        <label>Marca</label>
-                        <input name="marca" value="<?php echo $aparelho['0']->marca ?>" type="text" class="form-control" required>
-                        <div class="invalid-feedback">
-                            Forneça um marca válido.
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 mb-3">
-                        <label>Modelo</label>
-                        <input name="modelo" value="<?php echo $aparelho['0']->modelo ?>" type="text" class="form-control" required>
-                        <div class="invalid-feedback">
-                            Forneça um modelo válido.
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 mb-3">
-                        <label>Número de série</label>
-                        <input name="numero_serie" value="<?php echo $aparelho['0']->numero_serie ?>" type="text" class="form-control" required>
-                        <div class="invalid-feedback">
-                            Forneça um número de série válido.
-                        </div>
-                    </div>
-                </div>
-
                 <!-- ordem servico aparelho form -->
                 <input type="hidden" name="id_os_aparelho" value="<?php echo $os_aparelho[0]->id ?>">
 

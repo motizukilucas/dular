@@ -58,3 +58,18 @@ function carregaOrdemServicoAparelhoEditForm(dados_os_aparelho)
     });
     return result;
 }
+
+function carregaAparelhoEditForm(dados_aparelho) 
+{
+    var result = null;
+    $.ajax({
+    url: "api/aparelho-edit-form/"+dados_aparelho.id,
+    type: 'get',
+    dataType: 'html',
+    async: false,
+    success: function(data) {
+        result = data;
+    } 
+    });
+    return result;
+}

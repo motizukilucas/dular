@@ -60,7 +60,9 @@ class AparelhoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $aparelho = Aparelho::findOrFail($id);
+        
+        return AparelhoForm::edit($aparelho);
     }
 
     /**
