@@ -32,6 +32,7 @@ Route::get('ordem-servico-edit-form/{id_ordem_servico}', 'OrdemServicoController
 Route::get('ordem-servico-peca-edit-form/{id_os_peca}', 'OrdemServicoPecaController@edit');
 Route::get('ordem-servico-aparelho-edit-form/{id_os_aparelho}', 'OrdemServicoAparelhoController@edit');
 Route::get('aparelho-edit-form/{id_aparelho}', 'AparelhoController@edit');
+Route::get('cliente-edit-form/{id_cliente}', 'ClienteController@edit');
 
 // Resource routes
 Route::resource('cliente', 'ClienteController');

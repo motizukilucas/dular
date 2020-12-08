@@ -73,3 +73,18 @@ function carregaAparelhoEditForm(dados_aparelho)
     });
     return result;
 }
+
+function carregaClienteEditForm(dados_cliente) 
+{
+    var result = null;
+    $.ajax({
+    url: "api/cliente-edit-form/"+dados_cliente.id,
+    type: 'get',
+    dataType: 'html',
+    async: false,
+    success: function(data) {
+        result = data;
+    } 
+    });
+    return result;
+}

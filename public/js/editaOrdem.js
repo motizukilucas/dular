@@ -19,17 +19,22 @@ dados_os_aparelho.id_ordem_servico = ($("[name='id_ordem_servico']").val());
 dados_os_aparelho.id_aparelho = ($("[name='id_aparelho']").val());
 dados_os_aparelho.id = ($("[name='id_os_aparelho']").val());
 
-// coleta dados OS aparelho
+// coleta dados aparelho
 dados_aparelho = coletaDadosAparelho();
 dados_aparelho.id = ($("[name='id_aparelho']").val());
 
-geraForm(dados_os_peca, dados_ordem_servico, dados_os_tecnico, dados_os_aparelho, dados_aparelho);
+// coleta dados cliente
+dados_cliente = coletaDadosCliente();
+dados_cliente.id = ($("[name='id_cliente']").val());
+
+geraForm(dados_os_peca, dados_ordem_servico, dados_os_tecnico, dados_os_aparelho, dados_aparelho, dados_cliente);
 
 submitForm();
 
-function geraForm(dados_os_peca, dados_ordem_servico, dados_os_tecnico, dados_os_aparelho, dados_aparelho)
+function geraForm(dados_os_peca, dados_ordem_servico, dados_os_tecnico, dados_os_aparelho, dados_aparelho, dados_cliente)
 {
     var form = '';
+    form += carregaClienteEditForm(dados_cliente);
     form += carregaAparelhoEditForm(dados_aparelho);
     form += carregaOrdemServicoAparelhoEditForm(dados_os_aparelho);
     form += carregaOrdemServicoPecaEditForm(dados_os_peca);
