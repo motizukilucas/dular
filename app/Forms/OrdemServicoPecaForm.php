@@ -33,7 +33,9 @@ class OrdemServicoPecaForm
     {
         if(!isset($peca->peca)) 
         {
-            $peca = '';
+            $peca = new \stdClass();
+            $peca->peca = '';
+            $peca->preco = '';
         }
 
         return '<div class="form-row">

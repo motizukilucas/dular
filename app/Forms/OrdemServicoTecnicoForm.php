@@ -10,7 +10,7 @@ class OrdemServicoTecnicoForm
         <div class="col-md-6 mb-3">
             <label>Técnico responsável</label>
             <select name="tecnico" class="custom-select" required>
-                <option selected disabled>Escolha...</option>';
+                <option selected disabled>Selecione...</option>';
 
         foreach($funcionarios as $funcionario)
         {
@@ -37,6 +37,19 @@ class OrdemServicoTecnicoForm
 
     public static function edit($os_tecnico, $tecnico, $funcionarios)
     {
+        if(!isset($os_tecnico->defeito_constatado)) 
+        {
+            $os_tecnico = new \stdClass();
+            $os_tecnico->defeito_constatado = '';
+        }
+
+        if(!isset($tecnico->nome)) 
+        {
+            $tecnico = new \stdClass();
+            $tecnico->nome = 'Selecione...';
+            $tecnico->id = '';
+        }
+
         $form = '<div class="form-row">
         <div class="col-md-6 mb-3">
             <label>Técnico responsável</label>

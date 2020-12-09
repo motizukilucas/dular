@@ -58,10 +58,10 @@ class OrdemServicoPecaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id = null)
     {
-        $os_peca = OrdemServicoPeca::findOrFail($id);
-        
+        $os_peca = OrdemServicoPeca::find($id);   
+
         return OrdemServicoPecaForm::edit($os_peca);
     }
 

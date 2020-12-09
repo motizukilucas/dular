@@ -59,10 +59,17 @@ class OrdemServicoTecnicoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id = null)
     {
-        $os_tecnico = OrdemServicoTecnico::findOrFail($id);
-        $tecnico = Funcionario::findOrFail($os_tecnico->id_tecnico);
+        $os_tecnico = OrdemServicoTecnico::find($id);
+        
+        if(!isset($os_tecnico))
+        {
+            $os_tecnico = new \stdClass();
+            $os_tecnico->id_tecnico = null;
+        }
+        
+        $tecnico = Funcionario::find($os_tecnico->id_tecnico);
         
         return OrdemServicoTecnicoForm::edit($os_tecnico, $tecnico, Funcionario::all());
     }
