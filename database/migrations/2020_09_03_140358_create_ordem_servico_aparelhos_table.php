@@ -20,10 +20,10 @@ class CreateOrdemServicoAparelhosTable extends Migration
             $table->foreignId('id_aparelho')->constrained('aparelhos');
             $table->text('acessorios')->nullable();
             $table->text('defeito_informado');
-            $table->dateTime('entrada', 6);
-            $table->dateTime('saida', 6)->nullable();
-            $table->dateTime('retorno', 6)->nullable();
-            $table->dateTime('segunda_saida', 6)->nullable();
+            $table->date('entrada', 6);
+            $table->date('saida', 6)->nullable();
+            $table->date('retorno', 6)->nullable();
+            $table->date('segunda_saida', 6)->nullable();
         });
     }
 
