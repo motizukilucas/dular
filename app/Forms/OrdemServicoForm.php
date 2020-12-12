@@ -121,7 +121,7 @@ class OrdemServicoForm
                                 <div class="input-group-prepend">
                                         <div class="input-group-text">R$</div>
                                 </div>
-                                <input name="desconto" value='.$ordem_servico->desconto.' type="text" class="form-control">
+                                <input name="desconto" value="'.$ordem_servico->desconto.'" type="text" class="form-control">
                             </div>
                             <div class="invalid-feedback">
                                 Forneça um desconto válido.
