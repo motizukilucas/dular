@@ -30,6 +30,23 @@
 
                 <button class="btn btn-primary" type="submit">Atualiza ordem</button>
             </form>
+
+            <div class="action">
+                <div class="btn-wpp btn-wrapper" style="margin-left: 0px;">
+                    <img class="btn-action" src="img/whatsapp-brands.svg">
+                    Whatsapp
+                </div>
+
+                <div class="btn-mail btn-wrapper">
+                    <img class="btn-action" src="img/envelope-solid.svg">
+                    Email
+                </div>
+
+                <div class="btn-print btn-wrapper">
+                    <img class="btn-action" src="img/print-solid.svg">
+                    Imprimir
+                </div>
+            </div>
         </div>
         
         <script type="text/javascript" src="js/carregaEditForms.js"></script>
