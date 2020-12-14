@@ -1,3 +1,8 @@
+// imprimir 
+$(".btn-print").click(function(){
+    window.print();
+});
+
 // coleta dados OS peca
 dados_os_peca = coletaDadosOrdemServicoPeca();
 dados_os_peca.id = ($("[name='id_os_peca']").val());

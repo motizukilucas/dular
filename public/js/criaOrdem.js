@@ -2,6 +2,11 @@ geraForm();
 adicionaEquipamento();
 submitForm();
 
+// imprimir 
+$(".btn-print").click(function(){
+    window.print();
+});
+
 function submitForm()
 {
     $("#cria-form").submit(function(event){
