@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Mail\TestMail;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +30,8 @@ Route::get('/edita-ordem', function () {
     return view('editaOrdem');
 });
 
+Route::get('/email', function () {
+    Mail::to('motizukilucas@gmail.com')->send(new TestMail());
 
+    // return new TestMail();
+});
