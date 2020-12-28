@@ -8,6 +8,35 @@ use Illuminate\Support\Facades\DB;
 
 class OrdemServicoRepository implements OrdemServicoRepositoryInterface
 {
+    // public function enviaEmail(Request $request)
+    // {
+    //     $cliente = DB::table('ordem_servicos')
+    //     ->join('clientes', 'ordem_servicos.id_cliente', '=', 'clientes.id')
+    //     ->where('clientes.nome', 'LIKE', '%Lucas%')
+    //     ->select(
+    //             'clientes.nome')
+    //     ->get();  
+
+    //     return
+    //     [
+    //         'cliente' => $cliente
+    //     ];
+    // }
+
+    public function enviaEmail(Request $request)
+    {
+        $cliente = DB::table('ordem_servicos')
+        ->join('clientes', 'ordem_servicos.id_cliente', '=', 'clientes.id')
+        ->where('ordem_servicos.id', '=', $request['ordem_servico'])
+        ->select('clientes.*')
+        ->get();  
+
+        return
+        [
+            'cliente' => $cliente
+        ];
+    }
+
     public function buscaForm(Request $request)
     {
         $data = DB::table('ordem_servicos')

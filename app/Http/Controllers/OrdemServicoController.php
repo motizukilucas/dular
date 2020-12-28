@@ -7,6 +7,8 @@ use App\Forms\OrdemServicoForm;
 use App\OrdemServico;
 use App\Funcionario;
 use App\Interfaces\OrdemServicoRepositoryInterface;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ordemServicoMail;
 
 class OrdemServicoController extends Controller
 {
@@ -104,5 +106,16 @@ class OrdemServicoController extends Controller
         $resultado = $ordem_servico_repository->geraEditarForm($request);
         
         return view('/editaOrdem', $resultado);
+    }
+
+    public function enviaEmail(Request $request, OrdemServicoRepositoryInterface $ordem_servico_repository)
+    {
+        $resultado = $ordem_servico_repository->enviaEmail($request);
+        
+        
+        dump($resultado['cliente'][0]);
+
+        return new ordemServicoMail($resultado['cliente'][0]->nome);
+        // Mail::to('motizukilucas@gmail.com')->send(new ordemServicoMail($resultado['0']->nome));
     }
 }

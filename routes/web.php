@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Mail\TestMail;
+use App\Mail\ordemServicoMail;
+use App\Mail\testMail;
 use Illuminate\Support\Facades\Mail;
 
 /*
@@ -15,23 +16,29 @@ use Illuminate\Support\Facades\Mail;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function() {
     return view('buscaOrdem');
 });
 
-Route::get('/cria-ordem', function () {
+Route::get('/cria-ordem', function() {
     return view('criaOrdem');
 });
 
 // tá aqui porque o /edita-ordem é carregado nesse gera-editar
 Route::post('gera-editar', 'OrdemServicoController@geraEditarForm');
 
-Route::get('/edita-ordem', function () {
+Route::get('/edita-ordem', function() {
     return view('editaOrdem');
 });
 
-Route::get('/email', function () {
-    Mail::to('motizukilucas@gmail.com')->send(new TestMail());
+Route::get('/email', function() {
+    // Mail::to('motizukilucas@gmail.com')->send(new ordemServicoMail());
 
-    // return new TestMail();
+    return new testMail("Lucas Motizuki");
 });
+
+Route::get('/envia-email', 'OrdemServicoController@enviaEmail');
+
+// Route::get('/envia-email', function() {
+//     return new ordemServicoMail("Lucas Motizuki");
+// });
