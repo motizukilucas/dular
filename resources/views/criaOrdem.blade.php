@@ -16,13 +16,10 @@
                     Whatsapp
                 </div>
 
-                <form id="form-email" action="envia-email">
-                    <input name="ordem_servico" type="text" class="form-control">
-                    <div class="btn-mail btn-wrapper">
-                        <img class="btn-action" src="img/envelope-solid.svg">
-                        Email
-                    </div>
-                </form>
+                <div class="btn-mail btn-wrapper">
+                    <img class="btn-action" src="img/envelope-solid.svg">
+                    Email
+                </div>
 
                 <div class="btn-print btn-wrapper">
                     <img class="btn-action" src="img/print-solid.svg">
@@ -30,13 +27,6 @@
                 </div>
             </div>
         </div>
-        
-        <script>
-            $('.btn-mail').on('click', function(){
-                console.log("Hello world!");
-                $('#form-email').submit();
-            });
-        </script>
         
         <script type="text/javascript" src="js/carregaCreateForms.js"></script>
         <script type="text/javascript" src="js/coletaDadosForm.js"></script>
