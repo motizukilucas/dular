@@ -40,24 +40,24 @@
                 <div class="form-row">
                     <div class="col-md-4 mb-3">
                         <label>Cliente</label>
-                        <input name="nome" type="text" value="{{ $cliente }}" class="form-control" required>
+                        <input name="nome" type="text" value="{{ $cliente->nome }}" class="form-control" required>
                     </div>
 
                     <div class="col-md-4 mb-3">
                         <label>Cpf/Cnpj</label>
-                        <input name="cpf_cnpj" type="text" class="form-control">
+                        <input name="cpf_cnpj" value="{{ $cliente->cpf_cnpj }}"  type="text" class="form-control">
                     </div>
 
                     <div class="col-md-4 mb-3">
                         <label>E-mail</label>
-                        <input name="email" type="text" class="form-control">
+                        <input name="email" value="{{ $cliente->email }}"  type="text" class="form-control">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="col-md-4 mb-3">
                         <label>Telefone celular</label>
-                        <input name="tel_celular" type="text" class="form-control" required>
+                        <input name="tel_celular" value="{{ $cliente->tel_celular }}"  type="text" class="form-control" required>
                         <div class="invalid-feedback">
                             Forneça um número de celular válido.
                         </div>
@@ -65,19 +65,19 @@
 
                     <div class="col-md-4 mb-3">
                         <label>Telefone residencial</label>
-                        <input name="tel_residencial" type="text" class="form-control">
+                        <input name="tel_residencial" value="{{ $cliente->tel_residencial }}"  type="text" class="form-control">
                     </div>
 
                     <div class="col-md-4 mb-3">
                         <label>Telefone comercial</label>
-                        <input name="tel_comercial" type="text" class="form-control">
+                        <input name="tel_comercial" value="{{ $cliente->tel_comercial }}"  type="text" class="form-control">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
                         <label>Rua</label>
-                        <input name="rua" type="text" class="form-control">
+                        <input name="rua"  value="{{ $cliente->rua }}"  type="text" class="form-control">
                         <div class="invalid-feedback">
                             Forneça uma rua válida.
                         </div>
@@ -85,7 +85,7 @@
 
                     <div class="col-md-3 mb-3">
                         <label>Número</label>
-                        <input name="numero" type="text" class="form-control">
+                        <input name="numero" value="{{ $cliente->numero }}"  type="text" class="form-control">
                         <div class="invalid-feedback">
                             Forneça um número válida.
                         </div>
@@ -93,14 +93,14 @@
 
                     <div class="col-md-3 mb-3">
                         <label>Complemento</label>
-                        <input name="complemento" type="text" class="form-control">
+                        <input name="complemento" value="{{ $cliente->complemento }}"  type="text" class="form-control">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="col-md-3 mb-3">
                         <label>Bairro</label>
-                        <input name="bairro" type="text" class="form-control">
+                        <input name="bairro" value="{{ $cliente->bairro }}"  type="text" class="form-control">
                         <div class="invalid-feedback">
                             Forneça um bairro válida.
                         </div>
@@ -108,7 +108,7 @@
                 
                     <div class="col-md-3 mb-3">
                         <label>Cidade</label>
-                        <input name="cidade" type="text" class="form-control">
+                        <input name="cidade" value="{{ $cliente->cidade }}"  type="text" class="form-control">
                         <div class="invalid-feedback">
                             Forneça uma cidade válida.
                         </div>
@@ -117,7 +117,8 @@
                     <div class="col-md-3 mb-3">
                         <label>Estado</label>
                         <select name="estado" class="custom-select">
-                            <option selected value="RJ">RJ</option>
+                            <option selected  value="{{ $cliente->estado }}" > {{ $cliente->estado }} </option>
+                            <option value="RJ">RJ</option>
                             <option value="SP">SP</option>
                             <option value="AC">AC</option>
                             <option value="AL">AL</option>
@@ -152,7 +153,7 @@
 
                     <div class="col-md-3 mb-3">
                         <label>Cep</label>
-                        <input name="cep" type="text" class="form-control">
+                        <input name="cep" value="{{ $cliente->cep }}"  type="text" class="form-control">
                         <div class="invalid-feedback">
                             Forneça um cep válido.
                         </div>
