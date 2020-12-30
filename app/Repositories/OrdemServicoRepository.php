@@ -40,14 +40,14 @@ class OrdemServicoRepository implements OrdemServicoRepositoryInterface
 
         $os_aparelho = DB::table('ordem_servicos')
         ->join('ordem_servico_aparelhos', 'ordem_servicos.id', '=', 'ordem_servico_aparelhos.id_ordem_servico')
-        ->where('ordem_servicos.id', $request->id)
+        ->where('ordem_servicos.id', $request['ordem_servico'])
         ->select('ordem_servico_aparelhos.*')
         ->get();
 
         $os_peca = DB::table('ordem_servicos')
         ->join('ordem_servico_aparelhos', 'ordem_servicos.id', '=', 'ordem_servico_aparelhos.id_ordem_servico')
         ->join('ordem_servico_pecas', 'ordem_servico_aparelhos.id', '=', 'ordem_servico_pecas.id_ordem_servico_aparelho')
-        ->where('ordem_servicos.id', $request->id)
+        ->where('ordem_servicos.id', $request['ordem_servico'])
         ->select('ordem_servico_pecas.*')
         ->get();
 
@@ -56,7 +56,7 @@ class OrdemServicoRepository implements OrdemServicoRepositoryInterface
             'cliente' => $cliente,
             'aparelho' => $aparelho,
             'os_aparelho' => $os_aparelho,
-            '$os_pecas' => $os_peca,
+            'os_peca' => $os_peca,
         ];
     }
 

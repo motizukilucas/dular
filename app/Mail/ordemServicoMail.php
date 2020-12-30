@@ -23,7 +23,7 @@ class ordemServicoMail extends Mailable
         $this->cliente = $cliente;
         $this->aparelho = $aparelho;
         $this->os_aparelho = $os_aparelho;
-        $this->os_peca == $os_peca;
+        $this->os_peca = $os_peca;
     }
 
     /**
