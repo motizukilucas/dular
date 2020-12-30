@@ -51,12 +51,46 @@ class OrdemServicoRepository implements OrdemServicoRepositoryInterface
         ->select('ordem_servico_pecas.*')
         ->get();
 
+        $tecnico = DB::table('ordem_servicos')
+        ->join('ordem_servico_aparelhos', 'ordem_servicos.id', '=', 'ordem_servico_aparelhos.id_ordem_servico')
+        ->join('ordem_servico_tecnicos', 'ordem_servico_aparelhos.id', '=', 'ordem_servico_tecnicos.id_ordem_servico_aparelho')
+        ->join('funcionarios', 'ordem_servico_tecnicos.id_tecnico', '=', 'funcionarios.id')
+        ->where('ordem_servicos.id', $request['ordem_servico'])
+        ->select('funcionarios.nome',
+                'funcionarios.id')
+        ->get();
+
+        $os_tecnico = DB::table('ordem_servicos')
+        ->join('ordem_servico_aparelhos', 'ordem_servicos.id', '=', 'ordem_servico_aparelhos.id_ordem_servico')
+        ->join('ordem_servico_tecnicos', 'ordem_servico_aparelhos.id', '=', 'ordem_servico_tecnicos.id_ordem_servico_aparelho')
+        ->where('ordem_servicos.id', $request['ordem_servico'])
+        ->select('ordem_servico_tecnicos.*')
+        ->get();
+
+        $atendente = DB::table('ordem_servicos')
+        ->join('funcionarios', 'id_atendente', '=', 'funcionarios.id')
+        ->where('ordem_servicos.id', $request['ordem_servico'])
+        ->select(
+            'funcionarios.nome',
+            'funcionarios.id')
+        ->get();
+
+        $ordem_servico = DB::table('ordem_servicos')
+        ->where('ordem_servicos.id', $request['ordem_servico'])
+        ->select(
+            'ordem_servicos.*')
+        ->get();
+
         return
         [
             'cliente' => $cliente,
             'aparelho' => $aparelho,
             'os_aparelho' => $os_aparelho,
             'os_peca' => $os_peca,
+            'tecnico' => $tecnico,
+            'os_tecnico' => $os_tecnico,
+            'atendente' => $atendente,
+            'ordem_servico' => $ordem_servico,
         ];
     }
 

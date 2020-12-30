@@ -255,6 +255,86 @@
                     </div>
                 </div>
 
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label>Técnico responsável</label>
+                        <select name="tecnico" class="custom-select" required>
+                            <option value='{{ $tecnico->id }}' selected>{{ $tecnico->nome }}</option>';
+                        </select>
+                        <div class="invalid-feedback">
+                                Forneça um técnico responsável válido.
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label>Defeito constatado</label>
+                        <textarea name="defeito_constatado" class="form-control" rows="3" required>{{ $os_tecnico->defeito_constatado }}</textarea>
+                        <div class="invalid-feedback">
+                            Forneça o laudo técnico.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label>Valor</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">R$</div>
+                                </div>
+                                <input name="preco" value='{{ $ordem_servico->preco }}'  type="text" class="form-control" required>    
+                            </div>
+                            <div class="invalid-feedback">
+                                Forneça um valor válido.
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label>Forma de pagamento</label>
+                            <select name="forma_pagamento" class="custom-select">
+                                <option selected value='{{ $ordem_servico->forma_pagamento }}' >{{ $ordem_servico->forma_pagamento }}</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Selecione um forma de pagamento válido.
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label>Desconto</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                        <div class="input-group-text">R$</div>
+                                </div>
+                                <input name="desconto" value='{{ $ordem_servico->desconto }}'  type="text" class="form-control">
+                            </div>
+                            <div class="invalid-feedback">
+                                Forneça um desconto válido.
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label>Atendente</label>
+                            <select name="atendente" class="custom-select" required>
+                                <option selected value='{{ $atendente->nome }}' >{{ $atendente->nome }}</option>';
+                            </select>
+                            <div class="invalid-feedback">
+                                Forneça um atendente válido.
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label>Status</label>
+                            <select name="status" class="custom-select" required>
+                                <option selected value='{{ $ordem_servico->status }}' >{{ $ordem_servico->status }}</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Selecione um status válido.
+                            </div>
+                        </div>
+                    </div>
+
 
                 <button class="btn btn-primary" type="submit">Criar ordem</button>
             </form>
