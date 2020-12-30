@@ -38,10 +38,17 @@ class OrdemServicoRepository implements OrdemServicoRepositoryInterface
         ->select('aparelhos.*')
         ->get();
 
+        $os_aparelho = DB::table('ordem_servicos')
+        ->join('ordem_servico_aparelhos', 'ordem_servicos.id', '=', 'ordem_servico_aparelhos.id_ordem_servico')
+        ->where('ordem_servicos.id', $request->id)
+        ->select('ordem_servico_aparelhos.*')
+        ->get();
+
         return
         [
             'cliente' => $cliente,
             'aparelho' => $aparelho,
+            'os_aparelho' => $os_aparelho,
         ];
     }
 

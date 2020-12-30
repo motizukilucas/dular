@@ -11,18 +11,18 @@ class ordemServicoMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $cliente;
-    public $aparelho;
+    public $cliente, $aparelho, $os_aparelho;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($cliente, $aparelho)
+    public function __construct($cliente, $aparelho, $os_aparelho)
     {
         $this->cliente = $cliente;
         $this->aparelho = $aparelho;
+        $this->$os_aparelho = $os_aparelho;
     }
 
     /**
