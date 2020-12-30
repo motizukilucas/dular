@@ -115,7 +115,7 @@ class OrdemServicoController extends Controller
         
         dump($resultado);
 
-        return new ordemServicoMail($resultado['cliente'][0], $resultado['aparelho'][0], $resultado['os_aparelho'][0]);
+        return new ordemServicoMail($resultado['cliente'][0], $resultado['aparelho'][0], $resultado['os_aparelho'][0], $resultado['os_peca'][0]);
         // Mail::to('motizukilucas@gmail.com')->send(new ordemServicoMail($resultado['0']->nome));
     }
 }
