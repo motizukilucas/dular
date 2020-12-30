@@ -113,9 +113,13 @@ class OrdemServicoController extends Controller
         $resultado = $ordem_servico_repository->enviaEmail($request);
         
         
-        dump($resultado);
+        // dump($resultado);
 
-        return new ordemServicoMail($resultado['cliente'][0], $resultado['aparelho'][0], $resultado['os_aparelho'][0], $resultado['os_peca'][0], $resultado['tecnico'][0], $resultado['os_tecnico'][0], $resultado['atendente'][0], $resultado['ordem_servico'][0]);
+        // return new ordemServicoMail($resultado['cliente'][0], $resultado['aparelho'][0], $resultado['os_aparelho'][0], $resultado['os_peca'][0], $resultado['tecnico'][0], $resultado['os_tecnico'][0], $resultado['atendente'][0], $resultado['ordem_servico'][0]);
+        
+        Mail::to('motizukilucas@gmail.com')->send(new ordemServicoMail($resultado['cliente'][0], $resultado['aparelho'][0], $resultado['os_aparelho'][0], $resultado['os_peca'][0], $resultado['tecnico'][0], $resultado['os_tecnico'][0], $resultado['atendente'][0], $resultado['ordem_servico'][0]));
+        
+        
         // Mail::to('motizukilucas@gmail.com')->send(new ordemServicoMail($resultado['0']->nome));
     }
 }
