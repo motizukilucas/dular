@@ -13,6 +13,13 @@ Preencha os seguintes dados no .env
 > DB_USERNAME=dular
 > DB_PASSWORD=
 
+> MAIL_HOST=smtp.gmail.com
+> MAIL_PORT=465
+> MAIL_USERNAME=motizukilucas@gmail.com
+> MAIL_PASSWORD=
+> MAIL_ENCRYPTION=ssl
+> MAIL_FROM_ADDRESS=motizukilucas@gmail.com
+
 De permissoes ao server
 	$ sudo chown www-data:www-data -R storage/ bootstrap/cache
 
