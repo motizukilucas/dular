@@ -24,6 +24,7 @@ Route::get('aparelho-form', 'AparelhoController@create');
 Route::get('aparelho-form2', 'AparelhoController@create2');
 Route::get('ordem-servico-form', 'OrdemServicoController@create');
 Route::get('ordem-servico-tecnico-form', 'OrdemServicoTecnicoController@create');
+Route::get('ordem-servico-tecnico-form2', 'OrdemServicoTecnicoController@create2');
 Route::get('ordem-servico-aparelho-form', 'OrdemServicoAparelhoController@create');
 Route::get('ordem-servico-aparelho-form2', 'OrdemServicoAparelhoController@create2');
 Route::get('ordem-servico-peca-form', 'OrdemServicoPecaController@create');

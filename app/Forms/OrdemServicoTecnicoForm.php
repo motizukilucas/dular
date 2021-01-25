@@ -35,6 +35,37 @@ class OrdemServicoTecnicoForm
         return $form;
     }
 
+    public static function create2($funcionarios)
+    {
+        $form = '<div class="form-row">
+        <div class="col-md-6 mb-3">
+            <label>Técnico responsável</label>
+            <select name="tecnico2" class="custom-select" required>
+                <option selected disabled>Selecione...</option>';
+
+        foreach($funcionarios as $funcionario)
+        {
+            $form .= '<option value='.  $funcionario->id .'>'. $funcionario->nome .'</option>';
+        }
+
+        $form .= '</select>
+                    <div class="invalid-feedback">
+                            Forneça um técnico responsável válido.
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label>Defeito constatado</label>
+                        <textarea name="defeito_constatado2" class="form-control" rows="3" required></textarea>
+                        <div class="invalid-feedback">
+                            Forneça o laudo técnico.
+                        </div>
+                    </div>
+                </div>';
+                
+        return $form;
+    }
+
     public static function edit($os_tecnico, $tecnico, $funcionarios)
     {
         if(!isset($os_tecnico->defeito_constatado)) 

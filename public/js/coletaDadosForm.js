@@ -105,3 +105,12 @@ function coletaDadosOrdemServicoTecnico(id_ordem_servico_aparelho)
     ordem_servico_tecnico.defeito_constatado = ($("[name='defeito_constatado']").val());
     return ordem_servico_tecnico;
 }
+
+function coletaDadosOrdemServicoTecnico2(id_ordem_servico_aparelho)
+{
+    var ordem_servico_tecnico = new Object();
+    ordem_servico_tecnico.id_ordem_servico_aparelho = id_ordem_servico_aparelho;
+    ordem_servico_tecnico.id_tecnico = ($("[name='tecnico2']").val());
+    ordem_servico_tecnico.defeito_constatado = ($("[name='defeito_constatado2']").val());
+    return ordem_servico_tecnico;
+}

@@ -103,6 +103,21 @@ function carregaOrdemServicoTecnico()
     return result;
 }
 
+function carregaOrdemServicoTecnico2() 
+{
+    var result = null;
+    $.ajax({
+       url: "api/ordem-servico-tecnico-form2",
+       type: 'get',
+       dataType: 'html',
+       async: false,
+       success: function(data) {
+           result = data;
+       } 
+    });
+    return result;
+}
+
 function carregaOrdemServicoPeca() 
 {
     var result = null;

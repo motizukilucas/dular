@@ -64,6 +64,13 @@ function submitForm()
         {
             ordem_servico_tecnico = cadastraOrdemServicoTecnico(dados_ordem_servico_tecnico);
         }
+
+        dados_ordem_servico_tecnico2 = coletaDadosOrdemServicoTecnico2(ordem_servico_aparelho2.id);
+        if 
+        (dados_ordem_servico_tecnico2.id_tecnico)
+        {
+            ordem_servico_tecnico2 = cadastraOrdemServicoTecnico(dados_ordem_servico_tecnico2);
+        }
     });
 }
 
@@ -90,7 +97,7 @@ function adicionaEquipamento()
          form += carregaAparelho2();
          form += carregaOrdemServicoAparelho2();
          form += carregaOrdemServicoPeca2();
-         form += carregaOrdemServicoTecnico();
+         form += carregaOrdemServicoTecnico2();
          $(this).after(form);
          $(this).css('display', 'none');
      });
