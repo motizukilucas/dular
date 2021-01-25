@@ -20,7 +20,7 @@ Preencha os seguintes dados no .env
 > MAIL_ENCRYPTION=ssl
 > MAIL_FROM_ADDRESS=motizukilucas@gmail.com
 
-De permissoes ao server
+Mude o gurpo e user do server
 	$ sudo chown www-data:www-data -R storage/ bootstrap/cache
 
 Build project
