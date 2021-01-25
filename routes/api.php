@@ -20,7 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // Form create routes
 Route::get('cliente-form', 'ClienteController@create');
-Route::get('aparelho-form', 'AparelhoController@create');
+Route::get('aparelho-form', 'AparelhoController@create2');
 Route::get('ordem-servico-form', 'OrdemServicoController@create');
 Route::get('ordem-servico-tecnico-form', 'OrdemServicoTecnicoController@create');
 Route::get('ordem-servico-aparelho-form', 'OrdemServicoAparelhoController@create');

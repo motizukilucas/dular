@@ -67,7 +67,7 @@ function adicionaEquipamento()
     $("#btn-plus-equipamento").click(function(){
         var form = '';
         form += '<hr>';
-         form += carregaAparelho();
+         form += carregaAparelho2();
          form += carregaOrdemServicoAparelho();
          form += carregaOrdemServicoPeca();
          form += carregaOrdemServicoTecnico();

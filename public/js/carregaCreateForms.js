@@ -28,6 +28,21 @@ function carregaAparelho()
     return result;
 }
 
+function carregaAparelho2() 
+{
+    var result = null;
+    $.ajax({
+       url: "api/aparelho-form2",
+       type: 'get',
+       dataType: 'html',
+       async: false,
+       success: function(data) {
+           result = data;
+       } 
+    });
+    return result;
+}
+
 function carregaOrdemServico() 
 {
     var result = null;
