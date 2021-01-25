@@ -73,6 +73,21 @@ function carregaOrdemServicoAparelho()
     return result;
 }
 
+function carregaOrdemServicoAparelho2() 
+{
+    var result = null;
+    $.ajax({
+       url: "api/ordem-servico-aparelho-form2",
+       type: 'get',
+       dataType: 'html',
+       async: false,
+       success: function(data) {
+           result = data;
+       } 
+    });
+    return result;
+}
+
 function carregaOrdemServicoTecnico() 
 {
     var result = null;
@@ -102,3 +117,19 @@ function carregaOrdemServicoPeca()
     });
     return result;
 }
+
+function carregaOrdemServicoPeca2() 
+{
+    var result = null;
+    $.ajax({
+       url: "api/ordem-servico-peca-form2",
+       type: 'get',
+       dataType: 'html',
+       async: false,
+       success: function(data) {
+           result = data;
+       } 
+    });
+    return result;
+}
+
