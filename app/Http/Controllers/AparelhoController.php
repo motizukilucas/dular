@@ -75,6 +75,19 @@ class AparelhoController extends Controller
         return AparelhoForm::edit($aparelho);
     }
 
+        /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit2($id)
+    {
+        $aparelho = Aparelho::findOrFail($id);
+        
+        return AparelhoForm::edit2($aparelho);
+    }
+
     /**
      * Update the specified resource in storage.
      *

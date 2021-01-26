@@ -24,6 +24,15 @@ dados_os_aparelho.id_ordem_servico = ($("[name='id_ordem_servico']").val());
 dados_os_aparelho.id_aparelho = ($("[name='id_aparelho']").val());
 dados_os_aparelho.id = ($("[name='id_os_aparelho']").val());
 
+// coleta dados do segunda OS aparelho
+if($("[name='id_os_aparelho2']"))
+{
+    dados_os_aparelho2 = coletaDadosOrdemServicoAparelho2();
+    dados_os_aparelho2.id_ordem_servico = ($("[name='id_ordem_servico']").val());
+    dados_os_aparelho2.id_aparelho = ($("[name='id_aparelho2']").val());
+    dados_os_aparelho2.id = ($("[name='id_os_aparelho2']").val());
+}
+
 // coleta dados aparelho
 dados_aparelho = coletaDadosAparelho();
 dados_aparelho.id = ($("[name='id_aparelho']").val());
@@ -54,7 +63,8 @@ function geraForm(dados_os_peca, dados_ordem_servico, dados_os_tecnico, dados_os
     if($("[name='id_aparelho2']"))
     {
         form += '<hr>';
-        form += carregaAparelhoEditForm(dados_aparelho2);
+        form += carregaAparelhoEditForm2(dados_aparelho2);
+        form += carregaOrdemServicoAparelhoEditForm2(dados_os_aparelho2);
     }
     else 
     {
@@ -65,10 +75,10 @@ function geraForm(dados_os_peca, dados_ordem_servico, dados_os_tecnico, dados_os
     $(".btn-primary").before(form);
 }
 
-if($("[name='id_aparelho2']"))
-{
-    console.log("Hello world");
-}
+// if($("[name='id_aparelho2']"))
+// {
+//     console.log("Hello world");
+// }
 
 function submitForm()
 {

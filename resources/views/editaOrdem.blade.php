@@ -1,5 +1,5 @@
         @include('header')
-        <?php dump($aparelho)?>
+        <?php dump($os_aparelho)?>
 
         <div class="container">
             <h1>
@@ -18,6 +18,8 @@
 
                 <!-- ordem servico aparelho form -->
                 <input type="hidden" name="id_os_aparelho" value="<?php echo $os_aparelho[0]->id ?>">
+                <input type="hidden" name="id_os_aparelho2" value="<?php echo $os_aparelho[1]->id ?>">
+
 
                 <!-- ordem servico peca form -->
                 <input type="hidden" name="id_os_peca" value="<?php if (isset($os_pecas[0]->id)) echo $os_pecas[0]->id ?>">

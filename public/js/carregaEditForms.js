@@ -59,11 +59,41 @@ function carregaOrdemServicoAparelhoEditForm(dados_os_aparelho)
     return result;
 }
 
+function carregaOrdemServicoAparelhoEditForm2(dados_os_aparelho) 
+{
+    var result = null;
+    $.ajax({
+    url: "api/ordem-servico-aparelho-edit-form2/"+dados_os_aparelho.id,
+    type: 'get',
+    dataType: 'html',
+    async: false,
+    success: function(data) {
+        result = data;
+    } 
+    });
+    return result;
+}
+
 function carregaAparelhoEditForm(dados_aparelho) 
 {
     var result = null;
     $.ajax({
     url: "api/aparelho-edit-form/"+dados_aparelho.id,
+    type: 'get',
+    dataType: 'html',
+    async: false,
+    success: function(data) {
+        result = data;
+    } 
+    });
+    return result;
+}
+
+function carregaAparelhoEditForm2(dados_aparelho) 
+{
+    var result = null;
+    $.ajax({
+    url: "api/aparelho-edit-form2/"+dados_aparelho.id,
     type: 'get',
     dataType: 'html',
     async: false,
