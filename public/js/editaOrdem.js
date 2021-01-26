@@ -28,6 +28,13 @@ dados_os_aparelho.id = ($("[name='id_os_aparelho']").val());
 dados_aparelho = coletaDadosAparelho();
 dados_aparelho.id = ($("[name='id_aparelho']").val());
 
+// coleta dados do segundo aparelho
+if($("[name='id_aparelho2']"))
+{
+    dados_aparelho2 = coletaDadosAparelho2();
+    dados_aparelho2.id = ($("[name='id_aparelho2']").val());
+}
+
 // coleta dados cliente
 dados_cliente = coletaDadosCliente();
 dados_cliente.id = ($("[name='id_cliente']").val());
@@ -44,9 +51,23 @@ function geraForm(dados_os_peca, dados_ordem_servico, dados_os_tecnico, dados_os
     form += carregaOrdemServicoAparelhoEditForm(dados_os_aparelho);
     form += carregaOrdemServicoPecaEditForm(dados_os_peca);
     form += carregaOrdemServicoTecnicoEditForm(dados_os_tecnico);
+    if($("[name='id_aparelho2']"))
+    {
+        form += '<hr>';
+        form += carregaAparelhoEditForm(dados_aparelho2);
+    }
+    else 
+    {
+        form += '<img  id="btn-plus-equipamento" class="btn-plus m-auto" src="img/plus-circle-solid.svg">';
+    }
     form += '<hr>';
     form += carregaOrdemServicoEditForm(dados_ordem_servico);
     $(".btn-primary").before(form);
+}
+
+if($("[name='id_aparelho2']"))
+{
+    console.log("Hello world");
 }
 
 function submitForm()

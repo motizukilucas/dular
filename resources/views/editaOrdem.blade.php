@@ -1,4 +1,5 @@
         @include('header')
+        <?php dump($aparelho)?>
 
         <div class="container">
             <h1>
@@ -13,6 +14,7 @@
                 <!-- aparelho form -->
                 <hr>
                 <input type="hidden" name="id_aparelho" value="<?php echo $aparelho['0']->id ?>">
+                <input type="hidden" name="id_aparelho2" value="<?php echo $aparelho['1']->id ?>">
 
                 <!-- ordem servico aparelho form -->
                 <input type="hidden" name="id_os_aparelho" value="<?php echo $os_aparelho[0]->id ?>">
