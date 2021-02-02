@@ -113,6 +113,13 @@ function submitForm()
 
         aparelho = atualizaAparelho(dados_aparelho);
 
+        // atualiza segundo aparelho
+        dados_aparelho2 = coletaDadosAparelho2();
+        dados_aparelho2.id = ($("[name='id_aparelho2']").val());
+    
+        aparelho = atualizaAparelho(dados_aparelho2);
+        
+
         // atualiza os aparelho
         dados_os_aparelho = coletaDadosOrdemServicoAparelho();
         dados_os_aparelho.id = ($("[name='id_os_aparelho']").val());
