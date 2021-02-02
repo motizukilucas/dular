@@ -29,11 +29,41 @@ function carregaOrdemServicoTecnicoEditForm(dados_os_tecnico)
     return result;
 }
 
+function carregaOrdemServicoTecnicoEditForm2(dados_os_tecnico) 
+{
+    var result = null;
+    $.ajax({
+    url: "api/ordem-servico-tecnico-edit-form2/"+dados_os_tecnico.id,
+    type: 'get',
+    dataType: 'html',
+    async: false,
+    success: function(data) {
+        result = data;
+    } 
+    });
+    return result;
+}
+
 function carregaOrdemServicoPecaEditForm(dados_os_peca) 
 {
     var result = null;
     $.ajax({
     url: "api/ordem-servico-peca-edit-form/"+dados_os_peca.id,
+    type: 'get',
+    dataType: 'html',
+    async: false,
+    success: function(data) {
+        result = data;
+    } 
+    });
+    return result;
+}
+
+function carregaOrdemServicoPecaEditForm2(dados_os_peca) 
+{
+    var result = null;
+    $.ajax({
+    url: "api/ordem-servico-peca-edit-form2/"+dados_os_peca.id,
     type: 'get',
     dataType: 'html',
     async: false,

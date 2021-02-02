@@ -76,6 +76,19 @@ class OrdemServicoPecaController extends Controller
     }
 
     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit2($id = null)
+    {
+        $os_peca = OrdemServicoPeca::find($id);   
+
+        return OrdemServicoPecaForm::edit2($os_peca);
+    }
+
+    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request

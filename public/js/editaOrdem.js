@@ -8,10 +8,24 @@ dados_os_peca = coletaDadosOrdemServicoPeca();
 dados_os_peca.id = ($("[name='id_os_peca']").val());
 dados_os_peca.id_os_aparelho = ($("[name='id_os_aparelho']").val());
 
+if($("[name='id_os_peca2']"))
+{
+    dados_os_peca2 = coletaDadosOrdemServicoPeca2();
+    dados_os_peca2.id = ($("[name='id_os_peca2']").val());
+    dados_os_peca2.id_os_aparelho = ($("[name='id_os_aparelho2']").val());
+}
+
 // coleta dados OS tecnico
 dados_os_tecnico = coletaDadosOrdemServicoTecnico();
 dados_os_tecnico.id_tecnico = ($("[name='id_tecnico']").val());
 dados_os_tecnico.id = ($("[name='id_os_tecnico']").val());
+
+if($("[name='id_os_tecnico2']"))
+{
+    dados_os_tecnico2 = coletaDadosOrdemServicoTecnico2();
+    dados_os_tecnico2.id_tecnico = ($("[name='id_tecnico2']").val());
+    dados_os_tecnico2.id = ($("[name='id_os_tecnico2']").val());
+}
 
 // coleta dados ordem_servico
 dados_ordem_servico = coletaDadosOrdemServico();
@@ -65,6 +79,8 @@ function geraForm(dados_os_peca, dados_ordem_servico, dados_os_tecnico, dados_os
         form += '<hr>';
         form += carregaAparelhoEditForm2(dados_aparelho2);
         form += carregaOrdemServicoAparelhoEditForm2(dados_os_aparelho2);
+        form += carregaOrdemServicoPecaEditForm2(dados_os_peca2);
+        form += carregaOrdemServicoTecnicoEditForm2(dados_os_tecnico2);
     }
     else 
     {

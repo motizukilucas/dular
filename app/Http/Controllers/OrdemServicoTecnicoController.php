@@ -84,6 +84,21 @@ class OrdemServicoTecnicoController extends Controller
         return OrdemServicoTecnicoForm::edit($os_tecnico, $tecnico, Funcionario::all());
     }
 
+    public function edit2($id = null)
+    {
+        $os_tecnico = OrdemServicoTecnico::find($id);
+        
+        if(!isset($os_tecnico))
+        {
+            $os_tecnico = new \stdClass();
+            $os_tecnico->id_tecnico = null;
+        }
+        
+        $tecnico = Funcionario::find($os_tecnico->id_tecnico);
+        
+        return OrdemServicoTecnicoForm::edit2($os_tecnico, $tecnico, Funcionario::all());
+    }
+
     /**
      * Update the specified resource in storage.
      *

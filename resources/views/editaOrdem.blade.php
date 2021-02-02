@@ -1,5 +1,5 @@
         @include('header')
-        <?php dump($os_aparelho)?>
+        <?php dump($os_tecnico)?>
 
         <div class="container">
             <h1>
@@ -23,10 +23,13 @@
 
                 <!-- ordem servico peca form -->
                 <input type="hidden" name="id_os_peca" value="<?php if (isset($os_pecas[0]->id)) echo $os_pecas[0]->id ?>">
+                <input type="hidden" name="id_os_peca2" value="<?php if (isset($os_pecas[1]->id)) echo $os_pecas[1]->id ?>">
 
                 <!-- ordem servico tecnico form -->
                 <input type="hidden" name="id_tecnico" value="<?php if (isset($os_tecnico[0])) echo $os_tecnico[0]->id_tecnico ?>">
                 <input type="hidden" name="id_os_tecnico" value="<?php if (isset($os_tecnico[0])) echo $os_tecnico[0]->id ?>">
+                <input type="hidden" name="id_tecnico2" value="<?php if (isset($os_tecnico[1])) echo $os_tecnico[1]->id_tecnico ?>">
+                <input type="hidden" name="id_os_tecnico2" value="<?php if (isset($os_tecnico[1])) echo $os_tecnico[1]->id ?>">
 
                 <!-- ordem servico form -->
                 <input type="hidden" name="id_ordem_servico" value="<?php echo $ordem_servico[0]->id ?>">
