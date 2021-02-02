@@ -119,18 +119,29 @@ function submitForm()
     
         aparelho = atualizaAparelho(dados_aparelho2);
         
-
         // atualiza os aparelho
         dados_os_aparelho = coletaDadosOrdemServicoAparelho();
         dados_os_aparelho.id = ($("[name='id_os_aparelho']").val());
 
         os_aparelho = atualizaOsAparelho(dados_os_aparelho);
 
+        // atualiza segundo os aparelho
+        dados_os_aparelho2 = coletaDadosOrdemServicoAparelho2();
+        dados_os_aparelho2.id = ($("[name='id_os_aparelho2']").val());
+
+        os_aparelho = atualizaOsAparelho(dados_os_aparelho2);
+
         // atualiza os peca
         dados_os_peca = coletaDadosOrdemServicoPeca();
         dados_os_peca.id = ($("[name='id_os_peca']").val());
 
         os_peca = atualizaOsPeca(dados_os_peca);
+
+        // atualiza segunda os peca
+        dados_os_peca2 = coletaDadosOrdemServicoPeca2();
+        dados_os_peca2.id = ($("[name='id_os_peca2']").val());
+
+        os_peca = atualizaOsPeca(dados_os_peca2);
 
         // atualiza ordem servico
         dados_ordem_servico = coletaDadosOrdemServico(dados_cliente.id);
@@ -143,6 +154,12 @@ function submitForm()
         dados_os_tecnico.id = ($("[name='id_os_tecnico']").val());
 
         os_tecnico = atualizaOsTecnico(dados_os_tecnico);
+
+        // atualiza segundo os tecnico
+        dados_os_tecnico2 = coletaDadosOrdemServicoTecnico2(dados_os_aparelho2.id);
+        dados_os_tecnico2.id = ($("[name='id_os_tecnico2']").val());
+
+        os_tecnico = atualizaOsTecnico(dados_os_tecnico2);
 
     });
 }
